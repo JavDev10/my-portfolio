@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 html,
 body {
     background-image: url('/img/bg2.webp');
@@ -162,10 +166,10 @@ body::before {
 }
 
 .profile-photo {
-	width: 120px;
-	height: 120px;
+	width: 140px;
+	height: 140px;
 	border-radius: 25%;
-	border: 2px solid #8b5cf6;
+	border: 4px solid #ae8cff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -343,6 +347,111 @@ body::before {
 	text-align: center;
 }
 
+/* Certificates & Courses - Collapsible */
+.certificates-section {
+    margin-top: 30px;
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
+    border: 1px solid #8b5cf6;
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.certificates-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.certificates-section h3 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.certificates-icon { text-align: center; }
+
+.toggle-info {
+    display: block;
+    margin: 12px auto 6px auto;
+    background: transparent;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+.toggle-info:hover {
+    border-color: #5ce1e6;
+    transform: translateY(-1px);
+}
+
+.certificates-content {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    /* Estado base colapsado */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 1px solid rgba(133, 239, 243, 0.2);
+    border-top-color: transparent;
+    transition: max-height .35s ease, opacity .3s ease, padding-top .3s ease, margin-top .3s ease, border-top-color .3s ease;
+}
+
+.certificate-item { display: contents; }
+
+.certificate-badge {
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
+    border: 2px solid #5ce1e6;
+    border-radius: 16px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #85eff3;
+}
+
+.certificate-title { font-weight: 700; }
+.certificate-org { margin-top: 8px; font-weight: 600; }
+
+.certificate-text { text-align: left; }
+
+.certificate-link {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+	font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.certificates-section.open .certificates-content {
+    /* Se usa un valor alto para permitir expandir todo el contenido */
+    max-height: 2000px;
+    opacity: 1;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top-color: rgba(133, 239, 243, 0.2);
+}
+
+/* Responsive for certificates */
+@media screen and (max-width: 768px) {
+    .certificates-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .certificate-badge { padding: 14px; }
+    .toggle-info { padding: 8px 12px; }
+}
+
 .education-icon {
 	text-align: center;
 	margin-bottom: 20px;
@@ -391,10 +500,17 @@ body::before {
 	height: 120px;
 	border-radius: 15px;
 	overflow: hidden;
-	background: #f0f0f0;
+	background: #3c2568;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding: 5px;
+}
+
+.img-studies{
+	border-radius: 15px;
+	width: 110px;
+	height: 110px;
 }
 
 .skills-buttons {
@@ -570,7 +686,7 @@ body::before {
 	background-color:#2E1A65;
 	border-radius: 20px;
 	padding: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -621,7 +737,36 @@ body::before {
     );
     margin: 12px 0;
 }
+.separador3 {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to left, 
+    #bb90ff 100%,   /* Transparente al inicio */
+    #bb90ff 0%,  /* Azul sólido al centro */
+    #bb90ff00 0%  /* Transparente al final */
+    );
+    margin: 12px 0;
+}
 
+.curriculum-download-section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30px;
+	gap: 15px;
+}
+.curriculum-download-button{
+	border: 2px solid #8b5cf6;
+	border-radius: 12px;
+	padding: 15px 20px;
+	color: white;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	text-align: center;
+    background: linear-gradient(180deg, #8b5cf6 0%, #570c94 100%);
+	min-width: 140px;
+}
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
 	.portfolio-container {
@@ -826,10 +971,7 @@ body::before {
 		gap: 15px;
 	}
 
-	.placeholder-image {
-		width: 100px;
-		height: 100px;
-	}
+	
 
 	.skills-buttons {
 		gap: 8px;
