@@ -159,10 +159,11 @@ body::before {
 }
 
 .mobile-welcome {
-	color: #ccacff;
-	font-size: 1.2rem;
+	color: #f5efff;
+	font-size: 1.4rem;
 	font-weight: 500;
 	margin: 0;
+	font-style: italic;
 }
 
 .profile-photo {
@@ -563,8 +564,9 @@ body::before {
 .about-text{
 	border: #19e6ff 1px solid;
 	border-radius: 15px;
-	background-color:#29175a;
+	background: linear-gradient(135deg, #271746 0%, #1a0d2e 100%);
 	padding: 1rem;
+	font-weight: 500;
 }
 
 /* Projects Content Styles */
@@ -626,7 +628,7 @@ body::before {
 
 .blog-post {
 	background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
-	border: 1px solid #85eff3;
+	border: 1px solid #f8fcfc;
 	border-radius: 15px;
 	padding: 25px;
 }
@@ -1057,3 +1059,4 @@ body::before {
   object-fit: cover;
   display: block;
 }
+

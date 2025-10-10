@@ -1,11 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import CurriculumContent from '../components/CurriculumContent.astro';
-import AboutContent from '../components/AboutContent.astro';
-import ProjectsContent from '../components/ProjectsContent.astro';
 import BlogContent from '../components/BlogContent.astro';
 ---
-
 <Layout>
 	<div class="portfolio-container">
 		<!-- Header Module (Left Sidebar) -->
@@ -46,7 +42,9 @@ import BlogContent from '../components/BlogContent.astro';
 
 		<!-- Body Module (Main Content) -->
 		<main class="body-module">
-			<CurriculumContent />
+			
+			<BlogContent />
+			
 		</main>
 		<!-- Footer Module -->
 		<footer class="footer-module">
@@ -66,8 +64,7 @@ import BlogContent from '../components/BlogContent.astro';
 			</div>
 		</footer>
 	</div>
-
-	<script>
+    <script>
 		document.addEventListener('DOMContentLoaded', function() {
 			const navButtons = document.querySelectorAll('.nav-button');
 			const contentSections = document.querySelectorAll('.content-section');
