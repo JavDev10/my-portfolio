@@ -17,7 +17,7 @@ body {
 	width: 100%;
 	min-height: 100vh;
 	background: #0a0a0a;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: system-ui;
 	color: white;
 	overflow-x: hidden;
 }
@@ -440,6 +440,41 @@ body::before {
     border-top-color: rgba(133, 239, 243, 0.2);
 }
 
+  .skills-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .skills-box h3 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .skills-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .skills-list li {
+    padding: 0.5rem 0;
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+    .skills-container {
+      flex-direction: column;
+    }
+    
+    .skills-box {
+      min-width: 100%;
+    }
+  }
 /* Responsive for certificates */
 @media screen and (max-width: 768px) {
     .certificates-content {
@@ -513,32 +548,6 @@ body::before {
 	height: 110px;
 }
 
-.skills-buttons {
-	display: flex;
-	gap: 15px;
-	justify-content: center;
-	flex-wrap: wrap;
-}
-
-.skill-button {
-	background: #85eff3;
-	color: #2d1b4e;
-	border: none;
-	border-radius: 25px;
-	padding: 12px 20px;
-	font-size: 0.9rem;
-	font-weight: 600;
-	transition: all 0.3s ease;
-	font-family: 'Courier New', monospace;
-}
-
-.skill-button:hover {
-	background: #5ce1e6;
-	transform: translateY(-2px);
-	box-shadow: 0 4px 8px rgba(133, 239, 243, 0.3);
-	cursor:default;
-}
-
 /* About Content Styles */
 .about-content {
 	margin-top: 20px;
@@ -551,35 +560,11 @@ body::before {
 	font-size: 1.1rem;
 }
 
-.skills-section {
-	margin-top: 30px;
-}
-
-.skills-section h3 {
-	font-size: 1.6rem;
-	margin-bottom: 20px;
-	color: #ffffff;
-	text-align: center;
-}
-
-.skills-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 20px;
-}
-
-.skill-category {
-	background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
-	border: 2px solid #85eff3;
+.about-text{
+	border: #19e6ff 1px solid;
 	border-radius: 15px;
-	padding: 20px;
-}
-
-.skill-category h4 {
-	color: #85eff3;
-	font-size: 1.1rem;
-	margin-bottom: 15px;
-	font-weight: bold;
+	background-color:#29175a;
+	padding: 1rem;
 }
 
 /* Projects Content Styles */
@@ -641,7 +626,7 @@ body::before {
 
 .blog-post {
 	background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
-	border: 2px solid #85eff3;
+	border: 1px solid #85eff3;
 	border-radius: 15px;
 	padding: 25px;
 }
@@ -760,13 +745,72 @@ body::before {
 	border-radius: 12px;
 	padding: 15px 20px;
 	color: white;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 500;
 	cursor: pointer;
 	text-align: center;
-    background: linear-gradient(180deg, #8b5cf6 0%, #570c94 100%);
-	min-width: 140px;
+    background: linear-gradient(75deg, #6328ee 0%, #7a28bd 100%);
+	min-width: 200px;
+	max-height: 60px;
 }
+
+.skills-section {
+  margin: 3rem;
+  text-align: center;
+}
+
+.skills-title {
+  color: #19e6ff;
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.skills-box {
+  background: linear-gradient(140deg, #b99bff 0%, #8c5df8 100%);
+	border: 4px solid #70d6ff;
+	border-radius: 15px;
+	padding: 25px;
+  min-width: 220px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-heading {
+  font-family: 'Fira Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.skills-list {
+  
+  font-size: 1.1rem;
+  
+}
+
+.skills-image img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 800px) {
+  .skills-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .skills-image img {
+    margin: 0 auto;
+  }
+}
+
+
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
 	.portfolio-container {
@@ -971,8 +1015,6 @@ body::before {
 		gap: 15px;
 	}
 
-	
-
 	.skills-buttons {
 		gap: 8px;
 	}
@@ -993,4 +1035,25 @@ body::before {
 	.blog-post {
 		padding: 15px;
 	}
+}
+
+/* About Banner Styles */
+.about-banner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 32px auto;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(25, 230, 255, 0.08);
+  background: #1a0d2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-banner img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  display: block;
 }
