@@ -3,7 +3,8 @@
 ---
 <div class="content-section" id="about-content">
 	<div class="name-section">
-		<h1>Sobre Mí</h1>
+		<h1>Sobre Mí 
+		</h1>
 		<div class='separador'></div>
 	</div>
 	<div class="about-banner">
@@ -11,6 +12,8 @@
 	</div>
 	<div class="about-content">
 		<div class="about-text">
+			<svg width="42px" height="42px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#85eff3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#85eff3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
 			<p>
 				Soy un Ingeniero en Informática de 25 años nacido en Chile, apasionado por la tecnología y el desarrollo de soluciones innovadoras. 
 				Mi experiencia se centra en el desarrollo backend, administración de sistemas y automatización de procesos.
@@ -19,8 +22,45 @@
 				Me caracterizo por ser una persona proactiva, con gran capacidad de aprendizaje y adaptación a nuevas tecnologías. 
 				Siempre busco la excelencia en cada proyecto o tarea que desarrollo. 
 			</p>
+
 		</div>
 		
+	<div class="skills-carousel-section">
+		<div class="skills-carousel" id="skills-carousel">
+			<div class="skill-item">Inglés B1</div>
+			<div class="skill-item active">Trabajo en equipo</div>
+			<div class="skill-item">Aprendizaje fluido</div>
+			<div class="skill-item">Resolución de problemas</div>
+			<div class="skill-item">Word y Excel Intermedio</div>
+		</div>
+	</div>	
+	<script>
+		const skills = ["Inglés B1", "Trabajo en equipo", "Aprendizaje fluido", "Resolución de problemas", "Word y Excel Intermedio"];
+		let current = 1; // El ítem central
 
+		function renderCarousel() {
+		const carousel = document.getElementById('skills-carousel');
+		if (!carousel) return;
+		carousel.innerHTML = '';
 
+		// Solo muestra 3 elementos: anterior, actual y siguiente
+		for (let i = -1; i <= 1; i++) {
+			let idx = (current + i + skills.length) % skills.length;
+			const div = document.createElement('div');
+			div.className = 'skill-item' + (i === 0 ? ' active' : '');
+			div.textContent = skills[idx];
+			// Animación de desplazamiento horizontal
+			div.style.transform = `translateX(${i * 30}px) scale(${i === 0 ? 1.08 : 0.95})`;
+			carousel.appendChild(div);
+		}
+		}
+
+		function nextSkill() {
+		current = (current + 1) % skills.length;
+		renderCarousel();
+		}
+
+		renderCarousel();
+		setInterval(nextSkill, 2000); // Cambia cada 2 segundos
+		</script>
 </div>
