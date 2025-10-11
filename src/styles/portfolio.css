@@ -10,14 +10,11 @@
 
 html,
 body {
-    background-image: url('/img/bg2.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url('/img/bg.webp');
+    
 	width: 100%;
 	min-height: 100vh;
-	background: #0a0a0a;
-	font-family: system-ui;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	color: white;
 	overflow-x: hidden;
 }
@@ -136,7 +133,7 @@ body::before {
 	width: 100%;
 	padding: 20px;
 	background: #5335a5;
-	
+	font-family: 'Fira Mono', monospace;
 	margin-top: 25px;
 	opacity: 0;
 	transform: translateY(-20px);

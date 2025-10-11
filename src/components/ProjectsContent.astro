@@ -1,5 +1,7 @@
 ---
 // ProjectsContent Component
+import { Image } from 'astro:assets';
+import projectImage from '../../public/img/proyects/proyect-institute-down.webp';
 ---
 <div class="content-section" id="projects-content">
 	<div class="name-section">
@@ -21,7 +23,14 @@
           </p>
         </div>
         <div class="project-image-box">
-          <img src="/img/proyects/proyect-institute-down.png" alt="Proyecto Rubik" />
+          <Image
+            src={projectImage}
+            alt="Captura de pantalla de la aplicación educativa para el Instituto Down"
+            loading="lazy"
+            width={600}
+            height={260}
+            format="webp"
+          />
         </div>
       </div>
       <div class="project-tech-row">

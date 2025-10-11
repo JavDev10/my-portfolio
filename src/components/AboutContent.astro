@@ -1,5 +1,7 @@
 ---
 // AboutContent Component
+import { Image } from 'astro:assets';
+import bannerImage from '../../public/img/banner-about-me.webp';
 ---
 <div class="content-section" id="about-content">
 	<div class="name-section">
@@ -8,7 +10,14 @@
 		<div class='separador'></div>
 	</div>
 	<div class="about-banner">
-		<img src="/img/banner-about-me.webp" alt="Banner" />
+		<Image
+			src={bannerImage}
+			alt="Banner de la sección sobre mí mostrando elementos tecnológicos"
+			loading="lazy"
+			width={1200}
+			height={100}
+			format="webp"
+		/>
 	</div>
 	<div class="about-content">
 		<div class="about-text">
