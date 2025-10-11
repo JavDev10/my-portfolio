@@ -10,7 +10,7 @@
 
 html,
 body {
-    background-image: url('/img/bg.webp');
+    background-color: #0e021b;
     background-size: cover;
 	width: 100%;
 	min-height: 100vh;
