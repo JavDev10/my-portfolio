@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import AboutContent from '../components/AboutContent.astro';
 import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 ---
 <Layout
 	title="Sobre Mí - Javier Camaño Torres"
@@ -10,44 +11,7 @@ import Footer from '../components/Footer.astro';
 >
 	<div class="portfolio-container">
 		<!-- Header Module (Left Sidebar) -->
-		<header class="header-module">
-			<div class="header-content">
-				<div class="profile-section">
-					<div >
-						<img class="profile-photo" src="img/perfil-img.jpg" alt="Foto de perfil de Javier Camaño Torres" loading="eager">
-					</div>
-				</div>
-				<nav class="navigation">
-					<a class="nav-button" href="/">Curriculum</a>
-					<a class="nav-button" href="/sobre-mi">Sobre mí</a>
-					<a class="nav-button" href="/proyectos">Proyectos</a>
-					<a class="nav-button" href="/blog">Blog</a>
-				</nav>
-			</div>
-			
-			<!-- Mobile Header Content -->
-			<div class="mobile-header-content">
-				<div class="mobile-profile-section">
-					<div >
-						<img class="profile-photo" src="img/perfil-img.jpg" alt="" loading="eager">
-					</div>
-					<h2 class="mobile-welcome">Bienvenid@!</h2>
-				</div>
-				<button class="mobile-menu-toggle" id="mobile-menu-toggle">
-					<span class="hamburger-line"></span>
-					<span class="hamburger-line"></span>
-					<span class="hamburger-line"></span>
-				</button>
-			</div>
-			
-			<!-- Mobile Navigation Menu -->
-			<nav class="mobile-navigation" id="mobile-navigation">
-				<a class="nav-button" href="/">Curriculum</a>
-				<a class="nav-button" href="/sobre-mi">Sobre mí</a>
-				<a class="nav-button" href="/proyectos">Proyectos</a>
-				<a class="nav-button" href="/blog">Blog</a>
-			</nav>
-		</header>
+		<Header />
 
 		<!-- Body Module (Main Content) -->
 		<main class="body-module">
