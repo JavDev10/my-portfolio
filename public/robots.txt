@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://javiercamano.netlify.app//sitemap.xml
+Sitemap: https://javiercamano.netlify.app/sitemap.xml
