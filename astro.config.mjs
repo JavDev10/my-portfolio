@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://javiercamano.netlify.app/', 
+  site: 'https://javierportafolio.com/', 
   integrations: [sitemap()],
   image: {
     // Enable built-in image optimization
