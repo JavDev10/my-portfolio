@@ -36,15 +36,13 @@ import bannerImage from '../../public/img/banner-about-me.webp';
 		
 	<div class="skills-carousel-section">
 		<div class="skills-carousel" id="skills-carousel">
-			<div class="skill-item">Inglés B1</div>
-			<div class="skill-item active">Trabajo en equipo</div>
-			<div class="skill-item">Aprendizaje fluido</div>
-			<div class="skill-item">Resolución de problemas</div>
-			<div class="skill-item">Word y Excel Intermedio</div>
+			<div class="skill-item">Inglés nivel B2</div>
+			<div class="skill-item active">Aprendizaje fluido</div>
+			<div class="skill-item ">Trabajo en equipo</div>
 		</div>
 	</div>	
 	<script>
-		const skills = ["Inglés B1", "Trabajo en equipo", "Aprendizaje fluido", "Resolución de problemas", "Word y Excel Intermedio"];
+		const skills = ["Inglés nivel B2", "Trabajo en equipo", "Aprendizaje fluido", "Resolución de problemas", "Word y Excel Intermedio"];
 		let current = 1; // El ítem central
 
 		function renderCarousel() {
@@ -70,6 +68,6 @@ import bannerImage from '../../public/img/banner-about-me.webp';
 		}
 
 		renderCarousel();
-		setInterval(nextSkill, 2000); // Cambia cada 2 segundos
+		setInterval(nextSkill, 2000); 
 		</script>
 </div>
