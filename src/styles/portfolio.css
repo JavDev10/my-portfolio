@@ -877,6 +877,7 @@ body::before {
 		padding: 25px;
 		height: auto;
 		max-height: none;
+		min-height: 700px;
 		overflow-y: visible;
 	}
 
