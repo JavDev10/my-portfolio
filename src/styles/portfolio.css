@@ -697,24 +697,6 @@ body::before {
 	gap: 30px;
 }
 
-.social-link {
-	color: white;
-	font-size: 1.5rem;
-	text-decoration: none;
-	padding: 10px 15px;
-	border-radius: 10px;
-	transition: all 0.3s ease;
-	background: rgba(139, 92, 246, 0.1);
-	border: 1px solid #8b5cf6;
-}
-
-.social-link:hover {
-	background: rgba(236, 72, 153, 0.2);
-	border-color: #ec4899;
-	transform: translateY(-2px);
-	box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3);
-}
-
 .separador {
     height: 3px;
     width: 100%;
@@ -957,7 +939,7 @@ body::before {
 	}
 
 	.social-icons {
-		gap: 20px;
+		gap: 50px;
 	}
 
 	.social-link {
