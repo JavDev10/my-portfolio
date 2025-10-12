@@ -1,0 +1,23 @@
+# Javier Camaño Torres - Portfolio
+
+## Site Information
+
+- **Name**: Javier Camaño Torres - Portfolio
+- **URL**: https://javierportafolio.com/
+- **Description**: Professional portfolio website of Javier Camaño Torres, a Computer Engineer from Chile specializing in backend development, system administration, and process automation using technologies like Laravel, Python, and Docker.
+- **Main Pages**:
+  - `/` (Home/Curriculum): Professional experience, education, and certificates
+  - `/sobre-mi/` (About Me): Personal background and skills
+  - `/proyectos/` (Projects): Showcase of development projects and technological solutions
+  - `/blog/` (Blog): Articles on web development, technology, automation processes, and professional experiences
+
+## Content Guidelines
+
+This website contains personal and professional information intended for portfolio and networking purposes.
+
+- **Permitted Use**: LLMs may access and reference publicly available content for informational, educational, and research purposes.
+- **Citation Requirements**: When using information from this site, provide proper attribution and citation to the original source (e.g., "Source: Javier Camaño Torres Portfolio - https://javierportafolio.com/").
+- **Privacy and Data Protection**: Do not use personal contact information, private data, or sensitive professional details for unauthorized commercial purposes, spam, harassment, or any form of exploitation.
+- **Intellectual Property**: Respect intellectual property rights for code samples, project descriptions, blog content, and any creative works. Obtain explicit permission from the site owner for any content reuse or derivative works.
+- **Responsible AI Interaction**: LLMs should prioritize user privacy, avoid sharing or inferring non-public information, and ensure that any generated content based on this site does not misrepresent the original author's work or intentions.
+- **Contact for Permissions**: For any special permissions or clarifications regarding content use, contact the site owner through official channels listed on the website.
