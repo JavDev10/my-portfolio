@@ -4,6 +4,22 @@ document.addEventListener('DOMContentLoaded', function() {
 	const contentSections = document.querySelectorAll('.content-section');
 	const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
 	const mobileNavigation = document.getElementById('mobile-navigation');
+	const bodyModule = document.querySelector('.body-content');
+
+	// Function to trigger fade-in animation
+	function triggerFadeIn() {
+		if (bodyModule) {
+			// Reset animation by removing class first
+			bodyModule.classList.remove('fade-in');
+			// Force reflow
+			bodyModule.offsetHeight;
+			// Add class to trigger animation
+			bodyModule.classList.add('fade-in');
+		}
+	}
+
+	// Trigger fade-in on page load
+	triggerFadeIn();
 
 	// Navigation functionality
 	navButtons.forEach(button => {
