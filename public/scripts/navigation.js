@@ -1,5 +1,13 @@
 // Navigation functionality
 document.addEventListener('DOMContentLoaded', function() {
+	// Hide loading and show content
+	const loading = document.querySelector('.loading');
+	const contentWrapper = document.querySelector('.content-wrapper');
+	if (loading && contentWrapper) {
+		loading.style.display = 'none';
+		contentWrapper.style.display = 'block';
+	}
+
 	const navButtons = document.querySelectorAll('.nav-button');
 	const contentSections = document.querySelectorAll('.content-section');
 	const mobileMenuToggle = document.getElementById('mobile-menu-toggle');

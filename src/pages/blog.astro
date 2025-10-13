@@ -15,9 +15,12 @@ import Header from '../components/Header.astro';
 
 		<!-- Body Module (Main Content) -->
 		<main class="body-module">
-			
-			<BlogContent />
-			
+			<div class="loading">
+				<div class="loading-spinner"></div>
+			</div>
+			<div class="content-wrapper">
+				<BlogContent />
+			</div>
 		</main>
 		<!-- Footer Module -->
 		<Footer /> 
