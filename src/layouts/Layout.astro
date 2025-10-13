@@ -9,7 +9,7 @@ export interface Props {
 	url?: string;
 }
 
-const { title = "Javier Camaño Torres - Portafolio", description = "Portafolio de Javier Camaño Torres, Ingeniero en Informática especializado en desarrollo backend, administración de sistemas y automatización de procesos.", image = "/img/perfil-img.jpg", url } = Astro.props;
+const { title = "Javier Camaño Torres - Portafolio", description = "Portafolio de Javier Camaño Torres, Ingeniero en Informática especializado en desarrollo backend, administración de sistemas y automatización de procesos.", image = "/img/imagen-perfil.webp", url } = Astro.props;
 
 const canonicalURL = url || new URL(Astro.url.pathname, Astro.site);
 ---
@@ -28,7 +28,7 @@ const canonicalURL = url || new URL(Astro.url.pathname, Astro.site);
 		<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
 		<!-- Preload critical images -->
-		<link rel="preload" href="/img/perfil-img.jpg" as="image" type="image/jpeg">
+		<link rel="preload" href="/img/imagen-perfil.webp" as="image" type="image/jpeg">
 
 		<title>{title}</title>
 		<meta name="description" content={description} />
