@@ -1,5 +1,5 @@
 ---
-const currentPath = Astro.url.pathname.replace(/\/$/, '');
+const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
 ---
 
 <header class="header-module">
