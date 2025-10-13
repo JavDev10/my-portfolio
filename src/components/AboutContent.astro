@@ -2,6 +2,7 @@
 // AboutContent Component
 import { Image } from 'astro:assets';
 import bannerImage from '../../public/img/banner-about-me.webp';
+import '../styles/carousel.css';
 ---
 <div class="content-section" id="about-content">
 	<div class="name-section">
@@ -31,13 +32,45 @@ import bannerImage from '../../public/img/banner-about-me.webp';
 			</p>
 
 		</div>
-		
+	
 	<div class="skills-carousel-section">
-		<div class="skills-carousel" id="skills-carousel">
-			<div class="skill-item">Inglés nivel B2</div>
-			<div class="skill-item active">Aprendizaje fluido</div>
-			<div class="skill-item ">Trabajo en equipo</div>
-		</div>
+		<h2>Habilidades y Conocimientos</h2>	
+	<div class="carousel">
+      <div class="carousel__item">
+        <div class="carousel__item-body">
+          <p class="title">Aprendizaje fluido</p>
+        </div>
+      </div>
+
+      <div class="carousel__item">
+        <div class="carousel__item-body">
+          <p class="title">Trabajo en equipo</p>
+        </div>
+      </div>
+
+      <div class="carousel__item">
+        <div class="carousel__item-body">
+          <p class="title">Inglés nivel B2</p>
+        </div>
+      </div>
+
+      <div class="carousel__item">
+        <div class="carousel__item-body">
+          <p class="title">Resolución de problemas</p>
+        </div>
+      </div>
+
+      <div class="carousel__item">
+        <div class="carousel__item-body">
+          <p class="title">Programación Web</p>
+        </div>
+      </div>
+	  <div class="carousel__item">
+        <div class="carousel__item-body">
+          <p class="title">Excel</p>
+        </div>
+      </div>
+    </div>
 	</div>	
 	<script>
 		const skills = ["Inglés nivel B2", "Trabajo en equipo", "Aprendizaje fluido", "Resolución de problemas", "Word y Excel Intermedio"];

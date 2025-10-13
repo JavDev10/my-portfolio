@@ -1,0 +1,122 @@
+.skills-carousel-section {
+  margin-top: 2rem;
+  text-align: center;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.skills-carousel-section h2{
+  font-family: 'Fira Mono', monospace;
+  font-size: 1.5rem;
+  color: #95e1ff;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.carousel__item {
+font-family: 'Fira Mono', monospace;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 70%;
+  padding: 0 15px;
+  opacity: 0;
+  filter: drop-shadow(0 2px 2px #555);
+  will-change: transform, opacity;
+  animation: carousel-animate-horizontal 23s linear infinite;
+  
+}
+
+.carousel__item:nth-child(1) { animation-delay: 0s; }
+.carousel__item:nth-child(2) { animation-delay: 3s; }
+.carousel__item:nth-child(3) { animation-delay: 6s; }
+.carousel__item:nth-child(4) { animation-delay: 9s; }
+.carousel__item:nth-child(5) { animation-delay: 12s; }
+.carousel__item:nth-child(6) { animation-delay: 15s; }
+.carousel__item:nth-child(7) { animation-delay: 18s; }
+.carousel__item:nth-child(8) { animation-delay: 21s; }
+.carousel__item:nth-child(9) { animation-delay: 24s; }
+
+
+.carousel__item-body {
+  width: 100%;
+  background: rgba(133, 239, 243, 0.2);
+  border: 1px solid #85eff3;
+color: #ebfeff;
+  border-radius: 30px;
+  padding: 16px;
+ 
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 18px;
+  
+}
+
+@keyframes carousel-animate-horizontal {
+  0% {
+    transform: translateX(80%) scale(0.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+  3%,
+  11.1% {
+    transform: translateX(80%) scale(0.7);
+    opacity: 0.3;
+    visibility: visible;
+  }
+  14.1%,
+  22.2% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+  25.2%,
+  33.3% {
+    transform: translateX(-80%) scale(0.7);
+    opacity: 0.3;
+    visibility: visible;
+  }
+  36.3% {
+    transform: translateX(-80%) scale(0.5);
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    transform: translateX(-80%) scale(0.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@media (max-width: 768px) {
+  .skills-carousel-section {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    min-height: 120px;
+  }
+  .title {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.skills-carousel-section h2{
+  font-family: 'Fira Mono', monospace;
+  font-size: 1.2rem;
+  color: #95e1ff;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+  
+}

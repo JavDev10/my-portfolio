@@ -6,10 +6,10 @@
             </div>
         </div>
         <nav class="navigation">
-            <a class="nav-button" href="/">Curriculum</a>
-            <a class="nav-button" href="/sobre-mi">Sobre mí</a>
-            <a class="nav-button" href="/proyectos">Proyectos</a>
-            <a class="nav-button" href="/blog">Blog</a>
+            <a class={`nav-button ${Astro.url.pathname === '/' ? 'active' : ''}`} href="/">Curriculum</a>
+            <a class={`nav-button ${Astro.url.pathname === '/sobre-mi' ? 'active' : ''}`} href="/sobre-mi">Sobre mí</a>
+            <a class={`nav-button ${Astro.url.pathname === '/proyectos' ? 'active' : ''}`} href="/proyectos">Proyectos</a>
+            <a class={`nav-button ${Astro.url.pathname === '/blog' ? 'active' : ''}`} href="/blog">Blog</a>
         </nav>
     </div>
     
@@ -30,9 +30,9 @@
     
     <!-- Mobile Navigation Menu -->
     <nav class="mobile-navigation" id="mobile-navigation">
-        <a class="nav-button" href="/">Curriculum</a>
-        <a class="nav-button" href="/sobre-mi">Sobre mí</a>
-        <a class="nav-button" href="/proyectos">Proyectos</a>
-        <a class="nav-button" href="/blog">Blog</a>
+        <a class={`nav-button ${Astro.url.pathname === '/' ? 'active' : ''}`} href="/">Curriculum</a>
+        <a class={`nav-button ${Astro.url.pathname === '/sobre-mi' ? 'active' : ''}`} href="/sobre-mi">Sobre mí</a>
+        <a class={`nav-button ${Astro.url.pathname === '/proyectos' ? 'active' : ''}`} href="/proyectos">Proyectos</a>
+        <a class={`nav-button ${Astro.url.pathname === '/blog' ? 'active' : ''}`} href="/blog">Blog</a>
     </nav>
 </header>

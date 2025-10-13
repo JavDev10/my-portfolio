@@ -206,7 +206,6 @@ body::before {
 .nav-button:hover {
 	background: linear-gradient(135deg, #3d2b5e 0%, #2a1d3e 100%);
 	border-color: #ec4899;
-	transform: translateY(-2px);
 }
 
 .nav-button.active {
@@ -562,7 +561,7 @@ body::before {
 
 .about-text p {
 	color: #e2e8f0;
-	line-height: 1.6;
+	line-height: 1.5;
 	margin-bottom: 20px;
 	font-size: 1.1rem;
 }
@@ -575,8 +574,9 @@ body::before {
 	gap: 10px;
 	border-radius: 15px;
 	background: linear-gradient(135deg, #271746 0%, #1a0d2e 100%);
-	padding: 1rem;
-	font-weight: 500;
+	padding: 2rem 1.5rem;
+	font-weight: 400;
+	text-wrap: pretty;
 }
 
 /* Projects Content Styles */
@@ -652,7 +652,7 @@ body::before {
 }
 
 .post-date {
-	color: #a78bfa;
+	color: #d0c0ff;
 	font-size: 0.9rem;
 	margin-bottom: 15px;
 }
@@ -1055,58 +1055,6 @@ body::before {
   display: block;
 }
 
-.skills-carousel-section {
-  margin-top: 3rem;
-  text-align: center;
-  border-left: #5c4699 3px solid;
-  border-right: #5c4699 3px solid;
-  border-radius: 15px;
-}
-
-.skills-carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  min-height: 100px;
-  position: relative;
-  overflow: hidden;
-}
-
-.skill-item {
-  background: #466099;
-  color: #22223b;
-  font-family: 'Fira Mono', monospace;
-  font-size: 1.2rem;
-  border-radius: 1rem;
-  padding: 0.7rem 2.5rem;
-  opacity: 0.5;
-  transition: 
-    opacity 0.4s cubic-bezier(.4,0,.2,1),
-    background 0.4s cubic-bezier(.4,0,.2,1),
-    color 0.4s cubic-bezier(.4,0,.2,1),
-    transform 0.4s cubic-bezier(.4,0,.2,1);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  user-select: none;
-  transform: scale(0.95);
-  width: 260px;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  text-align: center;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-}
-
-.skill-item.active {
-  background: #19e6ff;
-  color: #22223b;
-  opacity: 1;
-  font-weight: bold;
-  z-index: 2;
-  transform: scale(1.08);
-  box-shadow: 0 4px 12px rgba(25, 230, 255, 0.3);
-}
 @media (max-width: 1094px) {
 
   .skill-item {
@@ -1119,48 +1067,17 @@ body::before {
 @media (max-width: 768px) {
   .skills-carousel-section {
     margin-top: 1.5rem;
-    margin-left: 0;
-    margin-right: 0;
-    border-left: none;
-    border-right: none;
-    border-radius: 10px;
-    padding: 0.5rem 0.2rem;
-	border-left: #5c4699 3px solid;
- 	border-right: #5c4699 3px solid;
+	
   }
-  .skills-carousel {
-    gap: 0.5rem;
-    min-height: 100px;
-  }
-  .skill-item {
-    font-size: 1rem;
-    padding: 1rem;
-    width: 180px;
-	border-radius: 6px;
-  }
-
-  .skill-item.active {
-	box-shadow: 0 4px 12px rgba(25, 228, 255, 0);
-	}
+  
 }
 
 @media (max-width: 480px) {
   .skills-carousel-section {
-    margin-top: 2rem;
+    margin-top: 1rem;
+	margin-bottom: 2rem;
     border-radius: 6px;
-    padding: 0.2rem 0.1rem;
-	border-left: #5c4699 3px solid;
- 	border-right: #5c4699 3px solid;
-  }
-  .skills-carousel {
-    gap: 0.2rem;
-    min-height: 100px;
-  }
-  .skill-item {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.5rem;
-    width: 150px;
-	border-radius: 6px;
+	
   }
 }
 
@@ -1247,9 +1164,9 @@ body::before {
 
 .tech-tag2 {
   font-family: 'Fira Mono', monospace;
-  font-size: 1.08rem;
+  font-size: 1rem;
   font-weight: bold;
-  color: #70d6ff;
+  color: #95e1ff;
   background: transparent;
   border: 2px dashed #70d6ff;
   border-radius: 12px;
