@@ -816,9 +816,21 @@ body::before {
   }
 }
 
+@media (max-width: 938px) {
+	.body-content{
+	opacity: 0;
+	
+	transition: opacity 0.3s ease-out;
+}
 
+.body-content.fade-in {
+	opacity: 1;
+	
+}
+}
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
+
 	.portfolio-container {
 		grid-template-columns: 1fr;
 		grid-template-areas: 
@@ -835,7 +847,7 @@ body::before {
 		flex-direction: column;
 		align-items: center;
 		gap: 20px;
-		max-height: 120px;
+		max-height: 90px;
 	}
 
 	.header-content {
