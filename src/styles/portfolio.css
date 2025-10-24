@@ -674,6 +674,12 @@ body::before {
 	margin-bottom: 20px;
 }
 
+.post-excerpt a {
+	color: #fdb7ff;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
 .post-tags {
 	display: flex;
 	flex-wrap: wrap;
