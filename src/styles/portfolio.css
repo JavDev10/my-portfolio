@@ -822,8 +822,8 @@ body::before {
 
 .curriculum-download-button:hover {
 	transform: scale(1.05);
-	box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6);
-	border-color: #ec4899;
+
+	border-color: #f0ffff;
 	background: linear-gradient(75deg, #7a28bd 0%, #6328ee 100%);
 }
 
