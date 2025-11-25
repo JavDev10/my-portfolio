@@ -1,0 +1,59 @@
+/* Blog Page Styles */
+
+.blog-content {
+    margin-top: 20px;
+}
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.blog-post {
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
+    border: 1px solid #f8fcfc;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.blog-post h3 {
+    color: #85eff3;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Fira Mono', monospace;
+}
+
+.post-date {
+    color: #d0c0ff;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.post-excerpt {
+    color: #e2e8f0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.post-excerpt a {
+    color: #fdb7ff;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: rgba(133, 239, 243, 0.2);
+    border: 1px solid #85eff3;
+    color: #85eff3;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}

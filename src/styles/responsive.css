@@ -1,0 +1,362 @@
+/* Responsive Styles - Media Queries */
+
+/* Responsive for certificates */
+@media screen and (max-width: 768px) {
+    .certificates-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .certificate-badge {
+        padding: 14px;
+    }
+
+    .toggle-info {
+        padding: 8px 12px;
+    }
+}
+
+/* Skills responsive */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .skills-box {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .skills-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .skills-image img {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 938px) {
+    .body-content {
+        opacity: 0;
+
+        transition: opacity 0.3s ease-out;
+    }
+
+    .body-content.fade-in {
+        opacity: 1;
+
+    }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+
+    .portfolio-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "body"
+            "footer";
+        padding: 15px;
+        gap: 15px;
+        height: auto;
+    }
+
+    .header-module {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-height: 90px;
+    }
+
+    .header-content {
+        display: none;
+    }
+
+    .mobile-header-content {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-profile-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .profile-photo {
+        width: 60px;
+        height: 65px;
+        font-size: 10px;
+    }
+
+    .mobile-welcome {
+        font-size: 1rem;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .mobile-navigation {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 10px 0 0 0;
+        border-radius: 20px;
+        z-index: 10;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .body-module {
+        padding: 25px;
+        height: auto;
+        max-height: none;
+        min-height: 700px;
+        overflow-y: visible;
+    }
+
+    .name-section h1 {
+        font-size: 2rem;
+    }
+
+    .name-section h2 {
+        font-size: 1rem;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .experience-card {
+        padding: 20px;
+    }
+
+    .education-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .education-text {
+        order: 2;
+    }
+
+    .education-image {
+        order: 1;
+    }
+
+    .skills-buttons {
+        gap: 10px;
+    }
+
+    .skill-button {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .skill-category {
+        padding: 15px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .social-icons {
+        gap: 50px;
+    }
+
+    .social-link {
+        font-size: 1.2rem;
+        padding: 8px 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio-container {
+        padding: 10px;
+        gap: 10px;
+        height: auto;
+    }
+
+    .header-module {
+        padding: 15px;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        height: auto;
+    }
+
+    .mobile-header-content {
+        gap: 10px;
+    }
+
+    .mobile-profile-section {
+        gap: 10px;
+    }
+
+    .profile-photo {
+        width: 50px;
+        height: 55px;
+        font-size: 9px;
+    }
+
+    .mobile-welcome {
+        font-size: 0.9rem;
+    }
+
+    .mobile-menu-toggle {
+        width: 35px;
+        height: 35px;
+    }
+
+    .hamburger-line {
+        width: 16px;
+    }
+
+    .body-module {
+        padding: 20px;
+        height: auto;
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .name-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .experience-card {
+        padding: 15px;
+    }
+
+    .education-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .skills-buttons {
+        gap: 8px;
+    }
+
+    .skill-button {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+
+    .skill-category {
+        padding: 12px;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .blog-post {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 1094px) {
+
+    .skill-item {
+        font-size: 1rem;
+
+        border-radius: 8px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .skills-carousel-section {
+        margin-top: 1.5rem;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+    .skills-carousel-section {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        border-radius: 6px;
+
+    }
+}
+
+/* Projects Responsive */
+@media (max-width: 1336px) {
+    .project-info-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .project-image-box img {
+        width: 100%;
+        height: 120px;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .project-card {
+        padding: 1rem 0.5rem;
+        border-radius: 14px;
+    }
+
+    .project-title {
+        font-size: 1.1rem;
+        border-radius: 12px;
+        padding: 0.6rem 0.5rem;
+    }
+
+    .project-description-box {
+        font-size: 0.95rem;
+        border-radius: 10px;
+        padding: 0.7rem;
+    }
+
+    .project-image-box {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 100px;
+        min-height: 170px;
+    }
+
+    .project-image-box img {
+        border-radius: 10px;
+        height: max-content;
+    }
+
+    .tech-tag2 {
+        font-size: 0.9rem;
+        border-radius: 8px;
+        padding: 0.3rem 0.7rem;
+    }
+}

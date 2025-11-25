@@ -1,0 +1,130 @@
+/* Projects Page Styles */
+
+.projects-content {
+    margin-top: 20px;
+}
+
+/* Projects Grid - Old Style */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
+    border: 2px solid #85eff3;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.project-card h3 {
+    color: #85eff3;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.project-description {
+    color: #e2e8f0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Projects Module - New Style */
+.project-card2 {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border-radius: 12px;
+    border-left: #71d4ec 5px solid;
+}
+
+.project-title {
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
+    color: #fff;
+    font-family: 'Fira Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 18px;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    min-height: 60px;
+}
+
+.project-info-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.project-description-box {
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
+    max-width: 550px;
+    border-radius: 18px;
+    padding: 1.2rem;
+    color: #fff;
+    font-size: 1.08rem;
+    line-height: 1.5;
+    flex: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-link {
+    color: #19e6ff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.project-image-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 480px;
+    min-height: 260px;
+}
+
+.project-image-box img {
+    width: max-content;
+    height: max-content;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-tech-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.tech-tag2 {
+    font-family: 'Fira Mono', monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #95e1ff;
+    background: transparent;
+    border: 2px dashed #70d6ff;
+    border-radius: 12px;
+    padding: 0.4rem 1.2rem;
+    margin-bottom: 0.5rem;
+    transition: background 0.2s;
+}
+
+.tech-tag2:hover {
+    background: #19e6ff22;
+}

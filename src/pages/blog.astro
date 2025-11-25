@@ -1,9 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import BlogContent from '../components/BlogContent.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import Layout from "../layouts/Layout.astro";
+import BlogContent from "../components/BlogContent.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import "../styles/blog.css";
 ---
+
 <Layout
 	title="Blog - Javier Camaño Torres"
 	description="Lee mis artículos sobre desarrollo web, tecnología, automatización de procesos y experiencias profesionales en el mundo de la informática."
@@ -20,7 +22,7 @@ import Header from '../components/Header.astro';
 			</div>
 		</main>
 		<!-- Footer Module -->
-		<Footer /> 
+		<Footer />
 	</div>
- <script is:inline src="/scripts/navigation.js"></script>
+	<script is:inline src="/scripts/navigation.js"></script>
 </Layout>

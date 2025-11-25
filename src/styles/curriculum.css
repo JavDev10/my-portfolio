@@ -1,0 +1,216 @@
+/* Curriculum Page Styles */
+
+/* Experience Section */
+.experience-section {
+    margin-top: 10px;
+}
+
+.experience-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Fira Mono', monospace;
+}
+
+.experience-icon {
+    text-align: center;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Education Section */
+.education-section {
+    margin-top: 30px;
+}
+
+.education-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Fira Mono', monospace;
+}
+
+.education-icon {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Certificates & Courses - Collapsible */
+.certificates-section {
+    margin-top: 30px;
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
+    border: 1px solid #8b5cf6;
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.certificates-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.certificates-section h3 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Fira Mono', monospace;
+}
+
+.certificates-icon {
+    text-align: center;
+}
+
+.toggle-info {
+    display: block;
+    margin: 12px auto 6px auto;
+    background: transparent;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+.toggle-info:hover {
+    border-color: #5ce1e6;
+    transform: translateY(-1px);
+}
+
+.certificates-content {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    /* Estado base colapsado */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 1px solid rgba(133, 239, 243, 0.2);
+    border-top-color: transparent;
+    transition: max-height .35s ease, opacity .3s ease, padding-top .3s ease, margin-top .3s ease, border-top-color .3s ease;
+}
+
+.certificate-item {
+    display: contents;
+}
+
+.certificate-badge {
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
+    border: 2px solid #5ce1e6;
+    border-radius: 16px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #85eff3;
+}
+
+.certificate-title {
+    font-weight: 700;
+}
+
+.certificate-org {
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.certificate-text {
+    text-align: left;
+}
+
+.certificate-link {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.certificates-section.open .certificates-content {
+    /* Se usa un valor alto para permitir expandir todo el contenido */
+    max-height: 2000px;
+    opacity: 1;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top-color: rgba(133, 239, 243, 0.2);
+}
+
+/* Skills Section */
+.skills-section {
+    margin: 3rem;
+    text-align: center;
+}
+
+.skills-title {
+    color: #19e6ff;
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+}
+
+.skills-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.skills-box {
+    background: linear-gradient(140deg, #b99bff 0%, #8c5df8 100%);
+    border: 4px solid #70d6ff;
+    border-radius: 15px;
+    padding: 25px;
+    min-width: 220px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-box h3 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.skills-heading {
+    font-family: 'Fira Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+.skills-list li {
+    padding: 0.5rem 0;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.skills-image img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,130 @@
+/* Layout Styles - Main Grid Structure */
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        "header body"
+        "footer footer";
+    min-height: 100vh;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Module */
+.header-module {
+    grid-area: header;
+    background-color: #2E1A65;
+    border-radius: 20px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    height: calc(100vh - 170px);
+    ;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    font-family: 'Fira Mono', monospace;
+}
+
+/* Body Module */
+.body-module {
+    grid-area: body;
+    background-color: #2E1A65;
+    border-radius: 20px;
+    padding: 40px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 170px);
+    position: relative;
+
+}
+
+.body-content {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.body-content.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.body-module::-webkit-scrollbar-track {
+    background-color: #43038bea;
+    border-radius: 1rem;
+}
+
+.body-module::-webkit-scrollbar {
+    width: 8px;
+    background-color: #300068ea;
+    border-radius: 1rem;
+}
+
+.body-module::-webkit-scrollbar-thumb {
+    background-color: #cb6ce6;
+    border-radius: 1rem;
+    background-image: -webkit-linear-gradient(90deg,
+            #5ce1e6 0%,
+            #5ce1e6 25%,
+            transparent 100%,
+            #5ce1e6 75%,
+            transparent)
+}
+
+.content-section {
+    display: block;
+}
+
+.content-section.hidden {
+    display: none;
+}
+
+/* Footer Module */
+.footer-module {
+    grid-area: footer;
+    background-color: #2E1A65;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 30px;
+}
+
+.social-icons a {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.8));
+}
+
+.social-icons svg {
+    transition: fill 0.3s ease;
+}

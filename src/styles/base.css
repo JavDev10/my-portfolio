@@ -1,0 +1,77 @@
+/* Base Styles - Global Reset and Utilities */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html,
+body {
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Background pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100px 100px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Separator Utilities */
+.separador {
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(to right,
+            #bb90ff00 0%,
+            /* Transparente al inicio */
+            #bb90ff 50%,
+            /* Azul sólido al centro */
+            #bb90ff00 100%
+            /* Transparente al final */
+        );
+    margin: 1rem 0;
+}
+
+.separador2 {
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(to right,
+            #bb90ff 0%,
+            /* Transparente al inicio */
+            #bb90ff 50%,
+            /* Azul sólido al centro */
+            #bb90ff00 100%
+            /* Transparente al final */
+        );
+    margin: 12px 0;
+}
+
+.separador3 {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to left,
+            #bb90ff 100%,
+            /* Transparente al inicio */
+            #bb90ff 0%,
+            /* Azul sólido al centro */
+            #bb90ff00 0%
+            /* Transparente al final */
+        );
+    margin: 12px 0;
+}
