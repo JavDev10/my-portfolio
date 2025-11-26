@@ -140,7 +140,7 @@
 
 .certificates-section.open .certificates-content {
     /* Se usa un valor alto para permitir expandir todo el contenido */
-    max-height: 2000px;
+    max-height: fit-content;
     opacity: 1;
     margin-top: 18px;
     padding-top: 18px;

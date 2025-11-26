@@ -388,62 +388,62 @@
 			</div>
 
 			<script>
-				// Inicialización robusta: corre ahora o al cargar el DOM
-				(function initToggle() {
-					const run = () => {
-						const section = document.querySelector("#certificates");
-						const btn = section?.querySelector(".toggle-info");
-						const content = section?.querySelector(
-							"#certificates-content",
-						);
-						if (!section || !btn || !content) return;
+				document.addEventListener("astro:page-load", () => {
+					const section = document.querySelector("#certificates");
+					const btn = section?.querySelector(".toggle-info");
+					const content = section?.querySelector(
+						"#certificates-content",
+					);
 
-						// Estado inicial: oculto
-						content.setAttribute("hidden", "");
-						btn.setAttribute("aria-expanded", "false");
+					if (!section || !btn || !content) return;
 
-						btn.addEventListener("click", () => {
-							const isOpen =
-								btn.getAttribute("aria-expanded") === "true";
-							btn.setAttribute("aria-expanded", String(!isOpen));
-							btn.innerHTML = !isOpen
-								? '<strong>Ocultar información</strong><span aria-hidden="true"></span>'
-								: '<strong>Ver información</strong><span aria-hidden="true"><svg width="20px" height="20px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 10V11L11 16L6 11V10L10 10V4L1 4L1 2L12 2V10H16Z" fill="#ccacff"></path> </g></svg></span>';
-							if (isOpen) {
-								// Animación de cierre: quitar clase open primero
-								section.classList.remove("open");
-								// Espera al fin de la transición antes de ocultar con hidden
-								const onTransitionEnd = () => {
+					// Función para manejar el click
+					const toggleHandler = (e) => {
+						e.preventDefault(); // Prevenir comportamiento por defecto si es necesario
+
+						const isOpen =
+							btn.getAttribute("aria-expanded") === "true";
+						btn.setAttribute("aria-expanded", String(!isOpen));
+
+						btn.innerHTML = !isOpen
+							? '<strong>Ocultar información</strong><span aria-hidden="true"></span>'
+							: '<strong>Ver información</strong><span aria-hidden="true"><svg width="20px" height="20px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 10V11L11 16L6 11V10L10 10V4L1 4L1 2L12 2V10H16Z" fill="#ccacff"></path> </g></svg></span>';
+
+						if (isOpen) {
+							// Cerrar
+							section.classList.remove("open");
+							// Esperar a que termine la transición CSS
+							setTimeout(() => {
+								if (!section.classList.contains("open")) {
 									content.setAttribute("hidden", "");
-									content.removeEventListener(
-										"transitionend",
-										onTransitionEnd,
-									);
-								};
-								content.addEventListener(
-									"transitionend",
-									onTransitionEnd,
-								);
-							} else {
-								// Mostrar antes y luego aplicar clase para animar apertura
-								content.removeAttribute("hidden");
-								// Forzar reflow para asegurar que la transición se aplique
-								if (content instanceof HTMLElement) {
-									void content.offsetHeight;
 								}
+							}, 300); // 300ms coincide con la transición CSS usual
+						} else {
+							// Abrir
+							content.removeAttribute("hidden");
+							// Pequeño delay para permitir que el navegador renderice antes de añadir la clase
+							requestAnimationFrame(() => {
 								section.classList.add("open");
-							}
-						});
+							});
+						}
 					};
 
-					if (document.readyState === "loading") {
-						document.addEventListener("DOMContentLoaded", run, {
-							once: true,
-						});
-					} else {
-						run();
+					// Eliminar listener anterior si existe (clonando el nodo es una forma, pero aquí usaremos una propiedad custom para trackear)
+					// Una forma más limpia en Astro es clonar el nodo para limpiar eventos previos
+					const newBtn = btn.cloneNode(true);
+					if (btn.parentNode) {
+						btn.parentNode.replaceChild(newBtn, btn);
+						newBtn.addEventListener("click", toggleHandler);
 					}
-				})();
+
+					// Estado inicial
+					if (!section.classList.contains("open")) {
+						content.setAttribute("hidden", "");
+						if (newBtn instanceof Element) {
+							newBtn.setAttribute("aria-expanded", "false");
+						}
+					}
+				});
 			</script>
 		</div>
 

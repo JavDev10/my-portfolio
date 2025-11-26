@@ -2,7 +2,7 @@
 
 /* Responsive for certificates */
 @media screen and (max-width: 768px) {
-    .certificates-content {
+    .certificates-section .certificates-content {
         grid-template-columns: 1fr;
     }
 }
@@ -42,13 +42,11 @@
 @media (max-width: 938px) {
     .body-content {
         opacity: 0;
-
         transition: opacity 0.3s ease-out;
     }
 
     .body-content.fade-in {
         opacity: 1;
-
     }
 }
 
@@ -136,12 +134,17 @@
         font-size: 1rem;
     }
 
-    .experience-grid {
+    /* Specificity fix: added .portfolio-container */
+    .portfolio-container .experience-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
     .experience-card {
+        padding: 20px;
+    }
+
+    .education-module {
         padding: 20px;
     }
 
@@ -157,6 +160,17 @@
 
     .education-image {
         order: 1;
+    }
+
+    .project-tech,
+    .project-tech-row {
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .tech-tag2 {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.8rem;
     }
 
     .skills-buttons {
@@ -186,6 +200,14 @@
         padding: 20px;
     }
 
+    /* Project image box - mobile fix */
+    .project-image-box {
+        width: 100% !important;
+        min-width: 120px !important;
+        min-height: 120px !important;
+        margin-top: 15px;
+    }
+
     .social-icons {
         gap: 50px;
     }
@@ -196,107 +218,17 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    .portfolio-container {
-        padding: 10px;
-        gap: 10px;
-        height: auto;
-    }
-
-    .header-module {
-        padding: 15px;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        height: auto;
-    }
-
-    .mobile-header-content {
-        gap: 10px;
-    }
-
-    .mobile-profile-section {
-        gap: 10px;
-    }
-
-    .profile-photo {
-        width: 50px;
-        height: 55px;
-        font-size: 9px;
-    }
-
-    .mobile-welcome {
-        font-size: 0.9rem;
-    }
-
-    .mobile-menu-toggle {
-        width: 35px;
-        height: 35px;
-    }
-
-    .hamburger-line {
-        width: 16px;
-    }
-
-    .body-module {
-        padding: 20px;
-        height: auto;
-        max-height: none;
-        overflow-y: visible;
-    }
-
-    .name-section h1 {
-        font-size: 1.8rem;
-    }
-
-    .experience-card {
-        padding: 15px;
-    }
-
-    .education-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .skills-buttons {
-        gap: 8px;
-    }
-
-    .skill-button {
-        padding: 8px 12px;
-        font-size: 0.75rem;
-    }
-
-    .skill-category {
-        padding: 12px;
-    }
-
-    .project-card {
-        padding: 15px;
-    }
-
-    .blog-post {
-        padding: 15px;
-    }
-}
-
 @media (max-width: 1094px) {
-
     .skill-item {
         font-size: 1rem;
-
         border-radius: 8px;
     }
-
 }
 
 @media (max-width: 768px) {
     .skills-carousel-section {
         margin-top: 1.5rem;
-
     }
-
 }
 
 @media (max-width: 480px) {
@@ -304,7 +236,6 @@
         margin-top: 1rem;
         margin-bottom: 2rem;
         border-radius: 6px;
-
     }
 }
 
@@ -315,10 +246,11 @@
         gap: 1rem;
     }
 
-    .project-image-box img {
-        width: 100%;
-        height: 120px;
-        max-width: 300px;
+    .projects-content .project-image-box img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: cover;
     }
 }
 
@@ -340,23 +272,30 @@
         padding: 0.7rem;
     }
 
-    .project-image-box {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 100px;
-        min-height: 170px;
-    }
-
-    .project-image-box img {
+    .projects-content .project-image-box img {
         border-radius: 10px;
-        height: max-content;
+        max-height: 200px !important;
+        width: 100% !important;
+        object-fit: cover;
     }
 
     .tech-tag2 {
         font-size: 0.9rem;
         border-radius: 8px;
         padding: 0.3rem 0.7rem;
+    }
+
+    /* Small mobile adjustments */
+    .education-module {
+        padding: 15px;
+    }
+
+    .education-content {
+        gap: 15px;
+    }
+
+    .project-tech,
+    .project-tech-row {
+        gap: 6px;
     }
 }
