@@ -486,10 +486,6 @@
 }
 
 .curriculum-download-button:hover {
-    font-size: 0.9rem;
-}
-
-.curriculum-download-button:hover {
     transform: scale(1.05);
     border-color: #f0ffff;
     background: linear-gradient(75deg, #7a28bd 0%, #6328ee 100%);

@@ -398,8 +398,10 @@
 					if (!section || !btn || !content) return;
 
 					// Función para manejar el click
-					const toggleHandler = (e) => {
-						e.preventDefault(); // Prevenir comportamiento por defecto si es necesario
+					const toggleHandler = (e: {
+						preventDefault: () => void;
+					}) => {
+						e.preventDefault();
 
 						const isOpen =
 							btn.getAttribute("aria-expanded") === "true";
