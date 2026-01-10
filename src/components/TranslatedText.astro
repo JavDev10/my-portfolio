@@ -1,0 +1,31 @@
+---
+import { translations } from "../i18n/translations";
+
+interface Props {
+    keyStr: string;
+    tagName?: string;
+    class?: string;
+    [key: string]: any; // Allow other props
+}
+
+const { keyStr, tagName = "span", class: className, ...props } = Astro.props;
+
+// Function to safely access nested object properties
+function getTranslation(obj: any, path: string) {
+    return path.split(".").reduce((prev, curr) => {
+        return prev ? prev[curr] : null;
+    }, obj);
+}
+
+const translationEntry = getTranslation(translations, keyStr);
+
+// Fallback if key not found (display key itself or error)
+const esText = translationEntry?.es || `[MISSING: ${keyStr}]`;
+const enText = translationEntry?.en || `[MISSING: ${keyStr}]`;
+
+// Determine dynamic tags
+const Tag = tagName as any;
+---
+
+<Tag class={`lang-es ${className || ""}`} {...props} set:html={esText} />
+<Tag class={`lang-en ${className || ""}`} {...props} set:html={enText} />

@@ -1,29 +1,67 @@
 ---
-const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
+const currentPath =
+    Astro.url.pathname === "/" ? "/" : Astro.url.pathname.replace(/\/$/, "");
+import TranslatedText from "./TranslatedText.astro";
+import LanguageSwitch from "./LanguageSwitch.astro";
 ---
 
 <header class="header-module">
     <div class="header-content">
         <div class="profile-section">
-            <div >
-                <img class="profile-photo" src="/img/imagen-perfil.webp" alt="Foto de perfil de Javier Camaño Torres" loading="eager">
+            <div>
+                <img
+                    class="profile-photo"
+                    src="/img/imagen-perfil.webp"
+                    alt="Foto de perfil de Javier Camaño Torres"
+                    loading="eager"
+                />
             </div>
         </div>
         <nav class="navigation">
-            <a class={`nav-button ${currentPath === '/' ? 'active' : ''}`} href="/">Currículum</a>
-            <a class={`nav-button ${currentPath === '/sobre-mi' ? 'active' : ''}`} href="/sobre-mi">Sobre mí</a>
-            <a class={`nav-button ${currentPath === '/proyectos' ? 'active' : ''}`} href="/proyectos">Proyectos</a>
-            <a class={`nav-button ${currentPath === '/blog' ? 'active' : ''}`} href="/blog">Blog</a>
+            <a
+                class={`nav-button ${currentPath === "/" ? "active" : ""}`}
+                href="/"
+            >
+                <TranslatedText keyStr="header.cv" />
+            </a>
+            <a
+                class={`nav-button ${currentPath === "/sobre-mi" ? "active" : ""}`}
+                href="/sobre-mi"
+            >
+                <TranslatedText keyStr="header.about" />
+            </a>
+            <a
+                class={`nav-button ${currentPath === "/proyectos" ? "active" : ""}`}
+                href="/proyectos"
+            >
+                <TranslatedText keyStr="header.projects" />
+            </a>
+            <a
+                class={`nav-button ${currentPath === "/blog" ? "active" : ""}`}
+                href="/blog"
+            >
+                <TranslatedText keyStr="header.blog" />
+            </a>
         </nav>
+
+        <!-- Language Switch -->
+        <LanguageSwitch />
     </div>
 
     <!-- Mobile Header Content -->
     <div class="mobile-header-content">
         <div class="mobile-profile-section">
-            <div >
-                <img class="profile-photo" src="/img/imagen-perfil.webp" alt="Foto de perfil de Javier Camaño Torres" loading="eager">
+            <div>
+                <img
+                    class="profile-photo"
+                    src="/img/imagen-perfil.webp"
+                    alt="Foto de perfil de Javier Camaño Torres"
+                    loading="eager"
+                />
             </div>
-            <h2 class="mobile-welcome">Bienvenid@!</h2>
+            <h2 class="mobile-welcome">
+                <TranslatedText keyStr="header.mobileWelcome" />
+            </h2>
         </div>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle">
             <span class="hamburger-line"></span>
@@ -34,9 +72,27 @@ const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replac
 
     <!-- Mobile Navigation Menu -->
     <nav class="mobile-navigation" id="mobile-navigation">
-        <a class={`nav-button ${currentPath === '/' ? 'active' : ''}`} href="/">Curriculum</a>
-        <a class={`nav-button ${currentPath === '/sobre-mi' ? 'active' : ''}`} href="/sobre-mi">Sobre mí</a>
-        <a class={`nav-button ${currentPath === '/proyectos' ? 'active' : ''}`} href="/proyectos">Proyectos</a>
-        <a class={`nav-button ${currentPath === '/blog' ? 'active' : ''}`} href="/blog">Blog</a>
+        <a class={`nav-button ${currentPath === "/" ? "active" : ""}`} href="/">
+            <TranslatedText keyStr="header.cv" />
+        </a>
+        <a
+            class={`nav-button ${currentPath === "/sobre-mi" ? "active" : ""}`}
+            href="/sobre-mi"
+        >
+            <TranslatedText keyStr="header.about" />
+        </a>
+        <a
+            class={`nav-button ${currentPath === "/proyectos" ? "active" : ""}`}
+            href="/proyectos"
+        >
+            <TranslatedText keyStr="header.projects" />
+        </a>
+        <a
+            class={`nav-button ${currentPath === "/blog" ? "active" : ""}`}
+            href="/blog"
+        >
+            <TranslatedText keyStr="header.blog" />
+        </a>
+        <LanguageSwitch />
     </nav>
 </header>

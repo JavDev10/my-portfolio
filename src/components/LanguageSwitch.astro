@@ -1,0 +1,246 @@
+---
+
+---
+
+<div class="language-switch-container">
+    <label class="switch" aria-label="Cambiar idioma / Switch language">
+        <input type="checkbox" class="language-toggle-input" />
+        <span class="slider">
+            <span class="text-es">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="15"
+                    viewBox="0 0 750 500"
+                >
+                    <rect width="750" height="500" fill="#c60b1e"></rect>
+                    <rect width="750" height="250" y="125" fill="#ffc400"
+                    ></rect>
+                    <path d="M120 125h30v250h-30z" fill="none"></path>
+                    <!-- Simple emblem representation placeholder if needed, but plain stripes are safer/cleaner -->
+                </svg>
+            </span>
+            <span class="text-en">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="15"
+                    viewBox="0 0 60 30"
+                >
+                    <clipPath id="s">
+                        <path d="M0,0 v30 h60 v-30 z"></path>
+                    </clipPath>
+                    <path d="M0,0 v30 h60 v-30 z" fill="#012169"></path>
+                    <path
+                        d="M0,0 L60,30 M60,0 L0,30"
+                        stroke="#fff"
+                        stroke-width="6"></path>
+                    <path
+                        d="M0,0 L60,30 M60,0 L0,30"
+                        stroke="#C8102E"
+                        stroke-width="4"></path>
+                    <path
+                        d="M30,0 v30 M0,15 h60"
+                        stroke="#fff"
+                        stroke-width="10"></path>
+                    <path
+                        d="M30,0 v30 M0,15 h60"
+                        stroke="#C8102E"
+                        stroke-width="6"></path>
+                </svg>
+            </span>
+        </span>
+    </label>
+</div>
+
+<style>
+    .language-switch-container {
+        display: flex;
+        justify-content: center;
+        margin-top: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 70px;
+        height: 34px;
+    }
+
+    .switch input {
+        position: absolute; /* Fix for layout */
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #1e1e24; /* Dark background matching theme */
+        transition: 0.4s;
+        border-radius: 34px;
+        border: 2px solid #bb90ff; /* Theme accent color */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 8px;
+        box-shadow: 0 0 10px rgba(187, 144, 255, 0.2);
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 2px;
+        background-color: #bb90ff;
+        transition: 0.4s;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+    }
+
+    input:checked + .slider {
+        background-color: #2a2a35;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(36px);
+    }
+
+    /* Text labels inside slider */
+    .text-es,
+    .text-en {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        z-index: 1;
+        opacity: 1;
+        transition: opacity 0.3s;
+        pointer-events: none; /* Let clicks pass to label/input */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text-es {
+        margin-left: 28px; /* Push to right when circle is left (ES selected) is WRONG logic. */
+        /* Actually:
+           Circle is LEFT (default, unchecked). 
+           We want ES to be 'active' or visible.
+           Usually switches show selected option. 
+           If Circle is LEFT, it's state A.
+           If Circle is RIGHT, it's state B.
+           
+           Let's say Unchecked = ES. Circle Left.
+           Checked = EN. Circle Right.
+        */
+        position: absolute;
+        right: 10px;
+        opacity: 1; /* Visible when unchecked (ES mode) ??? No wait. */
+    }
+
+    .text-en {
+        position: absolute;
+        left: 10px;
+        opacity: 0.5;
+    }
+
+    /* Logic for text visibility */
+    /* When unchecked (ES default): Circle is Left. We want to see 'EN' on the right? Or 'ES' on the circle? */
+    /* Let's try: Text is static background. Circle covers? No circle is small. */
+    /* Let's just have static text "ES" and "EN" on left and right, and highlighting active one. */
+
+    .text-es {
+        right: 8px;
+        left: auto;
+        opacity: 0.4;
+    }
+    .text-en {
+        left: 8px;
+        right: auto;
+        opacity: 0.4;
+    }
+
+    /* When unchecked (ES), circle is left. The text covered by circle should be hidden? Or the text NOT covered is dimmed? */
+    /* Let's keep it simple: Just text inside. */
+
+    /* Better styles: */
+    /* ES is default (unchecked). Slider circle is LEFT. */
+    input:not(:checked) + .slider .text-es {
+        opacity: 1;
+        color: #1e1e24; /* Text color inside circle if circle covers it? No circle is solid. */
+        /* Let's make text NEXT to circle. */
+        right: 8px;
+        opacity: 0.5;
+    }
+    input:not(:checked) + .slider .text-en {
+        /* This is confusing. Let's restart slider inner text logic. */
+        /* Common design: [ (O) EN ] vs [ ES (O) ] */
+    }
+</style>
+
+<script>
+    function initLanguage() {
+        const toggles = document.querySelectorAll(".language-toggle-input");
+        const root = document.documentElement;
+
+        // 1. Check storage or system preference
+        const savedLang = localStorage.getItem("language");
+        const initialLang = savedLang || "es";
+
+        // Apply state
+        const isEn = initialLang === "en";
+        if (isEn) {
+            root.classList.add("lang-en");
+        } else {
+            root.classList.remove("lang-en");
+        }
+
+        // Sync UI
+        toggles.forEach((t) => {
+            if (t instanceof HTMLInputElement) {
+                t.checked = isEn;
+            }
+        });
+
+        // 2. Event Listeners
+        toggles.forEach((toggle) => {
+            // Prevent duplicate listeners
+            if (toggle.hasAttribute("data-init")) return;
+            toggle.setAttribute("data-init", "true");
+
+            toggle.addEventListener("change", (e) => {
+                const target = e.target as HTMLInputElement;
+                const isChecked = target.checked;
+
+                if (isChecked) {
+                    root.classList.add("lang-en");
+                    localStorage.setItem("language", "en");
+                } else {
+                    root.classList.remove("lang-en");
+                    localStorage.setItem("language", "es");
+                }
+
+                // Sync other toggles
+                toggles.forEach((t) => {
+                    if (t !== target && t instanceof HTMLInputElement) {
+                        t.checked = isChecked;
+                    }
+                });
+            });
+        });
+    }
+
+    // Run on load and View Transitions
+    initLanguage();
+    document.addEventListener("astro:page-load", initLanguage);
+</script>

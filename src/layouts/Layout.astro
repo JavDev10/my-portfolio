@@ -82,6 +82,17 @@ import { ClientRouter } from "astro:transitions";
 			})(window, document, "clarity", "script", "u1edt98pfp");
 		</script>
 	</head>
+	<script is:inline>
+		// Immediate language application to prevent flash
+		const savedLang = localStorage.getItem("language");
+		const systemLang = window.navigator.language.startsWith("en")
+			? "en"
+			: "es";
+		const initialLang = savedLang || "es";
+		if (initialLang === "en") {
+			document.documentElement.classList.add("lang-en");
+		}
+	</script>
 	<body>
 		<Background transition:persist />
 		<slot />

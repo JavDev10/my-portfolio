@@ -1,11 +1,13 @@
 ---
 // BlogContent Component
+import TranslatedText from "./TranslatedText.astro";
+import { translations } from "../i18n/translations";
 ---
 
 <div class="content-section" id="blog-content">
 	<div class="name-section">
 		<div class="header-row">
-			<h1>Blog</h1>
+			<h1><TranslatedText keyStr="blog.title" /></h1>
 			<div class="search-container">
 				<div class="search-box">
 					<svg
@@ -23,9 +25,16 @@
 					</svg>
 					<input
 						type="text"
-						id="search-input"
-						placeholder="Buscar..."
+						class="search-input lang-es"
+						placeholder={translations.blog.searchPlaceholder.es}
 						autocomplete="off"
+					/>
+					<input
+						type="text"
+						class="search-input lang-en"
+						placeholder={translations.blog.searchPlaceholder.en}
+						autocomplete="off"
+						style="display: none;"
 					/>
 				</div>
 			</div>
@@ -39,100 +48,113 @@
 				<div class="blog-posts" id="blog-posts-container">
 					<div class="blog-post">
 						<h3>
-							Estudio para repasar PHP - POO - Ejercicio práctico
+							<TranslatedText keyStr="blog.post1.title" />
 						</h3>
-						<p class="post-date">25 de octubre, 2025</p>
-						<p class="post-excerpt">
-							¡Un saludo! En esta publicación compartiré un
-							ejercicio práctico para que puedan repasar y aplicar
-							los conceptos antes estudiados. Dejaré el ejercicio
-							con su script de PHP, animence a realizarlo!
+						<p class="post-date">
+							<TranslatedText keyStr="blog.post1.date" />
 						</p>
 						<p class="post-excerpt">
-							📘 Archivos: <a
+							<TranslatedText keyStr="blog.post1.excerpt" />
+						</p>
+						<p class="post-excerpt">
+							📘 <TranslatedText keyStr="blog.post1.files" />
+							<a
 								href="https://docs.google.com/document/d/1Xkkt3ilHWwVpil01hBM6eedNDrRotBmM1br3wH6_Pvk/edit?usp=sharing"
-								target="_blank">Estudio PHP 3</a
+								target="_blank"
+								><TranslatedText keyStr="blog.post1.study" /></a
 							> - <a
 								href="https://drive.google.com/drive/folders/1WPFV7r16wUknlZcaJdSzM1-r9RM_Xxyj?usp=sharing"
 								target="_blank"
 							>
-								Scripts PHP</a
+								<TranslatedText
+									keyStr="blog.post1.scripts"
+								/></a
 							>
 						</p>
 						<div class="project-tech">
-							<span class="tech-tag">Programación PHP</span>
+							<span class="tech-tag"
+								><TranslatedText
+									keyStr="blog.post1.tag1"
+								/></span
+							>
 							<span class="tech-tag">POO</span>
 						</div>
 					</div>
 					<div class="blog-post">
 						<h3>
-							Estudio para repasar PHP - POO - Constructores y
-							Encapsulamiento
+							<TranslatedText keyStr="blog.post2.title" />
 						</h3>
-						<p class="post-date">25 de octubre, 2025</p>
-						<p class="post-excerpt">
-							¡Hola a todos! Dejo un nuevo post sobre mi estudio
-							de PHP y la programación orientada a objetos (POO).
-							En esta ocasión, me he centrado en los conceptos de
-							constructores y encapsulamiento. Dejaré apuntes con
-							ejercicios de mi estudio, espero que esta
-							información sea útil para otros que estén
-							interesados en profundizar en PHP.
+						<p class="post-date">
+							<TranslatedText keyStr="blog.post1.date" />
 						</p>
 						<p class="post-excerpt">
-							📘 Archivos: <a
+							<TranslatedText keyStr="blog.post2.excerpt" />
+						</p>
+						<p class="post-excerpt">
+							📘 <TranslatedText keyStr="blog.post1.files" />
+							<a
 								href="https://docs.google.com/document/d/1cgfzxkJSfHNLJ724lHKPjZQ7X4W4ry4pBRIApNRTc08/edit?usp=sharing"
-								target="_blank">Estudio PHP 2</a
+								target="_blank"
+								><TranslatedText keyStr="blog.post2.study" /></a
 							> - <a
 								href="https://drive.google.com/drive/folders/1WPFV7r16wUknlZcaJdSzM1-r9RM_Xxyj?usp=sharing"
 								target="_blank"
 							>
-								Scripts PHP</a
+								<TranslatedText
+									keyStr="blog.post1.scripts"
+								/></a
 							>
 						</p>
 						<div class="project-tech">
-							<span class="tech-tag">Programación PHP</span>
+							<span class="tech-tag"
+								><TranslatedText
+									keyStr="blog.post1.tag1"
+								/></span
+							>
 							<span class="tech-tag">POO</span>
 						</div>
 					</div>
 					<div class="blog-post">
 						<h3>
-							Estudio para repasar PHP - POO - Clases y Objetos
+							<TranslatedText keyStr="blog.post3.title" />
 						</h3>
-						<p class="post-date">23 de octubre, 2025</p>
-						<p class="post-excerpt">
-							¡Hola! En esta publicación, compartiré algunos
-							conceptos básicos que he repasado en PHP (POO),
-							clases y objetos. Dejaré apuntes con ejercicios de
-							mi estudio, espero que esta información sea útil
-							para otros que estén interesados en profundizar en
-							PHP.
+						<p class="post-date">
+							<TranslatedText keyStr="blog.post3.date" />
 						</p>
 						<p class="post-excerpt">
-							📘 Archivos: <a
+							<TranslatedText keyStr="blog.post3.excerpt" />
+						</p>
+						<p class="post-excerpt">
+							📘 <TranslatedText keyStr="blog.post1.files" />
+							<a
 								href="https://docs.google.com/document/d/156l4G15BbLbeypeMWI106T_g8BibuMpJWI4YpMFYZfA/edit?usp=sharing"
-								target="_blank">Estudio PHP 1</a
+								target="_blank"
+								><TranslatedText keyStr="blog.post3.study" /></a
 							> - <a
 								href="https://drive.google.com/drive/folders/1WPFV7r16wUknlZcaJdSzM1-r9RM_Xxyj?usp=sharing"
 								target="_blank"
 							>
-								Scripts PHP</a
+								<TranslatedText
+									keyStr="blog.post1.scripts"
+								/></a
 							>
 						</p>
 						<div class="project-tech">
-							<span class="tech-tag">Programación PHP</span>
+							<span class="tech-tag"
+								><TranslatedText
+									keyStr="blog.post1.tag1"
+								/></span
+							>
 							<span class="tech-tag">POO</span>
 						</div>
 					</div>
 					<div class="blog-post">
-						<h3>Publicación del portafolio</h3>
-						<p class="post-date">12 de octubre, 2025</p>
+						<h3><TranslatedText keyStr="blog.post4.title" /></h3>
+						<p class="post-date">
+							<TranslatedText keyStr="blog.post4.date" />
+						</p>
 						<p class="post-excerpt">
-							¡Hola a todos! He de anunciar que he publicado mi
-							portafolio web personal. Después de días de trabajo,
-							finalmente está en línea. En este blog compartiré
-							algunos detalles sobre el proceso de creación y lo
-							que pueden esperar encontrar en mi portafolio.
+							<TranslatedText keyStr="blog.post4.excerpt" />
 						</p>
 					</div>
 				</div>
@@ -141,53 +163,66 @@
 
 		<script>
 			document.addEventListener("astro:page-load", () => {
-				const searchInput = document.getElementById("search-input");
+				const searchInputs = document.querySelectorAll(".search-input");
 				const postsContainer = document.getElementById(
 					"blog-posts-container",
 				);
 
-				if (!searchInput || !postsContainer) return;
+				if (searchInputs.length === 0 || !postsContainer) return;
 
 				const posts = Array.from(
 					postsContainer.querySelectorAll(".blog-post"),
 				);
 
-				searchInput.addEventListener("input", (e) => {
-					const searchTerm = (e.target as HTMLInputElement).value
-						.toLowerCase()
-						.trim();
-					const searchWords = searchTerm
-						.split(/\s+/)
-						.filter((word) => word.length > 0);
+				searchInputs.forEach((input) => {
+					input.addEventListener("input", (e) => {
+						const target = e.target as HTMLInputElement;
+						const searchTerm = target.value.toLowerCase().trim();
 
-					posts.forEach((post) => {
-						const titleElement = post.querySelector("h3");
-						if (!titleElement) return;
+						// Sync values
+						searchInputs.forEach((si) => {
+							if (
+								si !== target &&
+								si instanceof HTMLInputElement
+							) {
+								si.value = target.value;
+							}
+						});
 
-						const title =
-							titleElement.textContent?.toLowerCase() || "";
-						const matches = searchWords.every((word) =>
-							title.includes(word),
-						);
-						const shouldShow = matches || searchTerm === "";
+						const searchWords = searchTerm
+							.split(/\s+/)
+							.filter((word) => word.length > 0);
 
-						if (shouldShow) {
-							// Show post
-							post.classList.remove("hidden");
-							// Use requestAnimationFrame to ensure the display change is registered before fading in
-							requestAnimationFrame(() => {
-								post.classList.remove("fading");
-							});
-						} else {
-							// Hide post
-							post.classList.add("fading");
-							// Wait for transition to finish before setting display: none
-							setTimeout(() => {
-								if (post.classList.contains("fading")) {
-									post.classList.add("hidden");
-								}
-							}, 400); // Matches CSS transition duration
-						}
+						posts.forEach((post) => {
+							const titleElement = post.querySelector("h3");
+							if (!titleElement) return;
+
+							// Check text content of visible or invisible elements.
+							// textContent gets ALL text. This is acceptable.
+							const title =
+								titleElement.textContent?.toLowerCase() || "";
+
+							const matches = searchWords.every((word) =>
+								title.includes(word),
+							);
+							const shouldShow = matches || searchTerm === "";
+
+							if (shouldShow) {
+								// Show post
+								post.classList.remove("hidden");
+								requestAnimationFrame(() => {
+									post.classList.remove("fading");
+								});
+							} else {
+								// Hide post
+								post.classList.add("fading");
+								setTimeout(() => {
+									if (post.classList.contains("fading")) {
+										post.classList.add("hidden");
+									}
+								}, 400);
+							}
+						});
 					});
 				});
 			});

@@ -1,122 +1,110 @@
-.skills-carousel-section {
-  margin-top: 2rem;
+.skills-section {
+  margin-top: 3rem;
+  width: 100%;
   text-align: center;
-  border-radius: 15px;
+}
+
+.skills-section h2 {
+  font-family: 'Fira Mono', monospace;
+  font-size: 1.8rem;
+  color: #95e1ff;
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.skill-card {
+  background: rgba(20, 10, 40, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(133, 239, 243, 0.2);
+  border-radius: 16px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-}
-.skills-carousel-section h2{
-  font-family: 'Fira Mono', monospace;
-  font-size: 1.5rem;
-  color: #95e1ff;
-  margin-bottom: 2rem;
-  font-weight: bold;
-}
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  display: flex;
   justify-content: center;
-  flex-direction: row;
+  gap: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 140px;
 }
 
-.carousel__item {
-font-family: 'Fira Mono', monospace;
-  display: flex;
-  align-items: center;
+.skill-card:hover {
+  transform: translateY(-5px);
+  background: rgba(30, 20, 60, 0.8);
+  border-color: #85eff3;
+  box-shadow: 0 8px 25px rgba(133, 239, 243, 0.2);
+}
+
+.skill-card::before {
+  content: '';
   position: absolute;
-  width: 70%;
-  padding: 0 15px;
-  opacity: 0;
-  filter: drop-shadow(0 2px 2px #555);
-  will-change: transform, opacity;
-  animation: carousel-animate-horizontal 23s linear infinite;
-  
-}
-
-.carousel__item:nth-child(1) { animation-delay: 0s; }
-.carousel__item:nth-child(2) { animation-delay: 3s; }
-.carousel__item:nth-child(3) { animation-delay: 6s; }
-.carousel__item:nth-child(4) { animation-delay: 9s; }
-.carousel__item:nth-child(5) { animation-delay: 12s; }
-.carousel__item:nth-child(6) { animation-delay: 15s; }
-.carousel__item:nth-child(7) { animation-delay: 18s; }
-.carousel__item:nth-child(8) { animation-delay: 21s; }
-.carousel__item:nth-child(9) { animation-delay: 24s; }
-
-
-.carousel__item-body {
+  top: 0;
+  left: 0;
   width: 100%;
-  background: rgba(133, 239, 243, 0.2);
-  border: 1px solid #85eff3;
-color: #ebfeff;
-  border-radius: 30px;
-  padding: 16px;
- 
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(133, 239, 243, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.title {
-  text-transform: uppercase;
-  font-size: 18px;
-  
+.skill-card:hover::before {
+  opacity: 1;
 }
 
-@keyframes carousel-animate-horizontal {
-  0% {
-    transform: translateX(80%) scale(0.5);
-    opacity: 0;
-    visibility: hidden;
-  }
-  3%,
-  11.1% {
-    transform: translateX(80%) scale(0.7);
-    opacity: 0.3;
-    visibility: visible;
-  }
-  14.1%,
-  22.2% {
-    transform: translateX(0) scale(1);
-    opacity: 1;
-    visibility: visible;
-  }
-  25.2%,
-  33.3% {
-    transform: translateX(-80%) scale(0.7);
-    opacity: 0.3;
-    visibility: visible;
-  }
-  36.3% {
-    transform: translateX(-80%) scale(0.5);
-    opacity: 0;
-    visibility: visible;
-  }
-  100% {
-    transform: translateX(-80%) scale(0.5);
-    opacity: 0;
-    visibility: hidden;
-  }
+.skill-icon {
+  width: 40px;
+  height: 40px;
+  color: #85eff3;
+  transition: transform 0.3s ease;
+  z-index: 1;
 }
-@media (max-width: 768px) {
-  .skills-carousel-section {
-    margin-top: 3rem;
-    margin-bottom: 1rem;
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.1);
+  color: #ebfeff;
+}
+
+.skill-name {
+  font-family: 'Fira Mono', monospace;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .skill-card {
+    padding: 15px;
     min-height: 120px;
   }
-  .title {
-  text-transform: uppercase;
-  font-size: 15px;
-  font-weight: bold;
-}
 
-.skills-carousel-section h2{
-  font-family: 'Fira Mono', monospace;
-  font-size: 1.2rem;
-  color: #95e1ff;
-  margin-bottom: 2rem;
-  font-weight: bold;
-}
-  
+  .skill-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .skill-name {
+    font-size: 0.85rem;
+  }
 }

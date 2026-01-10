@@ -100,7 +100,7 @@
     pointer-events: none;
 }
 
-#search-input {
+.search-input {
     width: 100%;
     padding: 10px 15px 10px 40px;
     background: rgba(255, 255, 255, 0.15);
@@ -112,11 +112,11 @@
     transition: all 0.3s ease;
 }
 
-#search-input::placeholder {
+.search-input::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
 
-#search-input:focus {
+.search-input:focus {
     background: rgba(255, 255, 255, 0.25);
     border-color: #ea85f3;
     box-shadow: 0 0 0 2px rgba(133, 239, 243, 0.2);

@@ -1,16 +1,25 @@
 ---
 // CurriculumContent Component
+import TranslatedText from "./TranslatedText.astro";
+import { translations } from "../i18n/translations";
 ---
 
 <div class="content-section" id="curriculum-content">
 	<div class="name-section">
-		<h1>Javier Camaño Torres</h1>
-		<h2>Ingeniero en Informática | Programador</h2>
+		<h1>
+			<TranslatedText
+				keyStr="curriculum.name"
+				default="Javier Camaño Torres"
+			/>
+		</h1>
+		<h2><TranslatedText keyStr="curriculum.title" /></h2>
 		<div class="separador"></div>
 	</div>
 
 	<div class="experience-section">
-		<h3><strong>Experiencia</strong></h3>
+		<h3>
+			<strong><TranslatedText keyStr="curriculum.experience" /></strong>
+		</h3>
 		<div class="experience-icon">
 			<svg
 				fill="#5ce1e6"
@@ -35,13 +44,12 @@
 
 		<div class="experience-grid">
 			<div class="experience-card">
-				<h4>Analista Programador Junior</h4>
-				<p class="company-info">ADIPA | Marzo - Actualidad | 2025</p>
+				<h4><TranslatedText keyStr="curriculum.exp1.role" /></h4>
+				<p class="company-info">
+					<TranslatedText keyStr="curriculum.exp1.date" />
+				</p>
 				<p class="description">
-					Actualmente colaboro en el mantenimiento de infraestructura
-					backend, implementando soluciones para mejorar la eficiencia
-					y escalabilidad. También trabajo en la integración de APIs y
-					automatización de procesos.
+					<TranslatedText keyStr="curriculum.exp1.desc" />
 				</p>
 				<ul class="tech-list">
 					<li>Laravel - PHP - Python</li>
@@ -54,13 +62,12 @@
 				</ul>
 			</div>
 			<div class="experience-card">
-				<h4>Practica Profesional (Analista TI)</h4>
-				<p class="company-info">ADIPA | 3 meses | 2024</p>
+				<h4><TranslatedText keyStr="curriculum.exp2.role" /></h4>
+				<p class="company-info">
+					<TranslatedText keyStr="curriculum.exp2.date" />
+				</p>
 				<p class="description">
-					Durante mi práctica profesional, me enfoqué en el desarrollo
-					de componentes y programación con Laravel y gestión de
-					contenido en Wordpress, tambien utilicé tecnologías como
-					Docker, Linux y máquinas virtuales.
+					<TranslatedText keyStr="curriculum.exp2.desc" />
 				</p>
 				<ul class="tech-list">
 					<li>Laravel - PHP - Python</li>
@@ -76,7 +83,9 @@
 
 	<!-- Estudios y formación section -->
 	<div class="education-section">
-		<h3><strong>Estudios y formación</strong></h3>
+		<h3>
+			<strong><TranslatedText keyStr="curriculum.education" /></strong>
+		</h3>
 		<div class="education-icon">
 			<svg
 				width="48px"
@@ -129,22 +138,22 @@
 		<div class="education-module">
 			<div class="education-content">
 				<div class="education-text">
-					<h4>IP Santo Tomas | Titulado en Ingeniería Informática</h4>
+					<h4><TranslatedText keyStr="curriculum.edu1.title" /></h4>
 					<p class="description">
-						Durante mi formación desarrollé competencias técnicas y
-						analíticas en el área de las tecnologías de la
-						información, enfocándome en la programación, el diseño
-						de sistemas, la administración de redes y la seguridad
-						informática, entre otros ámbitos clave del rubro. En mi
-						titulación fui destacado con excelencia académica.
+						<TranslatedText keyStr="curriculum.edu1.desc" />
 					</p>
 				</div>
 				<div class="education-image">
 					<div class="placeholder-image">
 						<img
-							class="img-studies"
+							class="img-studies lang-es"
 							src="/img/santo-tomas-logo.jpg"
-							alt="Logo del Instituto Profesional Santo Tomás"
+							alt={translations.curriculum.edu1.alt.es}
+						/>
+						<img
+							class="img-studies lang-en"
+							src="/img/santo-tomas-logo.jpg"
+							alt={translations.curriculum.edu1.alt.en}
 						/>
 					</div>
 				</div>
@@ -159,19 +168,22 @@
 		<div class="education-module">
 			<div class="education-content">
 				<div class="education-text">
-					<h4>Estudio Autodidacta</h4>
+					<h4><TranslatedText keyStr="curriculum.edu2.title" /></h4>
 					<p class="description">
-						Siempre estoy en busca de nuevas tecnologías y
-						metodologías para aportar valor, agilizar flujos de
-						trabajo y profundizar mis conocimientos.
+						<TranslatedText keyStr="curriculum.edu2.desc" />
 					</p>
 				</div>
 				<div class="education-image">
 					<div class="placeholder-image">
 						<img
-							class="img-studies"
+							class="img-studies lang-es"
 							src="/img/estudio_autodidacta.webp"
-							alt="Ilustración representando el estudio autodidacta y aprendizaje continuo"
+							alt={translations.curriculum.edu2.alt.es}
+						/>
+						<img
+							class="img-studies lang-en"
+							src="/img/estudio_autodidacta.webp"
+							alt={translations.curriculum.edu2.alt.en}
 						/>
 					</div>
 				</div>
@@ -188,7 +200,12 @@
 		<!-- Certificados y cursos (colapsable) -->
 		<div class="certificates-section" id="certificates">
 			<div class="certificates-header">
-				<h3><strong>Certificados y cursos</strong></h3>
+				<h3>
+					<strong
+						><TranslatedText
+							keyStr="curriculum.certificates.title"
+						/></strong>
+				</h3>
 				<div class="certificates-icon">
 					<svg
 						fill="#5ce1e6"
@@ -229,7 +246,9 @@
 				aria-controls="certificates-content"
 				aria-expanded="false"
 			>
-				<strong>Ver información</strong>
+				<strong>
+					<TranslatedText keyStr="curriculum.certificates.viewInfo" />
+				</strong>
 				<span aria-hidden="true">
 					<svg
 						width="20px"
@@ -254,134 +273,151 @@
 			<div id="certificates-content" class="certificates-content" hidden>
 				<div class="certificate-item">
 					<div class="certificate-badge">
-						<span class="certificate-title">Curso de N8N</span>
+						<span class="certificate-title"
+							><TranslatedText
+								keyStr="curriculum.cert1.title"
+							/></span
+						>
 						<span class="certificate-org">Platzi 2025</span>
 					</div>
 					<div class="certificate-text">
 						<p class="description">
-							Curso que me permitió adquirir conocimientos
-							fundamentales en automatización de procesos con n8n,
-							integraciones y buenas prácticas.
+							<TranslatedText keyStr="curriculum.cert1.desc" />
 						</p>
 						<div class="separador2"></div>
 						<a
 							class="certificate-link"
 							href="https://platzi.com/p/javier8576/curso/12028-course/diploma/detalle/"
 							target="_blank"
-							rel="noopener">Ver Certificado</a
+							rel="noopener"
+							><TranslatedText
+								keyStr="curriculum.certificates.viewCert"
+							/></a
 						>
 					</div>
 				</div>
 				<div class="certificate-item">
 					<div class="certificate-badge">
 						<span class="certificate-title"
-							>Curso de Prompt Engineering</span
+							><TranslatedText
+								keyStr="curriculum.cert2.title"
+							/></span
 						>
 						<span class="certificate-org">Platzi 2025</span>
 					</div>
 					<div class="certificate-text">
 						<p class="description">
-							Curso que me permitió adquirir conocimientos
-							fundamentales sobre el funcionamiento de los modelos
-							de lenguaje (LLM), técnicas efectivas de prompt y
-							configuraciones avanzadas para optimizar resultados.
+							<TranslatedText keyStr="curriculum.cert2.desc" />
 						</p>
 						<div class="separador2"></div>
 						<a
 							class="certificate-link"
 							href="https://platzi.com/p/javier8576/curso/12001-course/diploma/detalle/"
 							target="_blank"
-							rel="noopener">Ver Certificado</a
+							rel="noopener"
+							><TranslatedText
+								keyStr="curriculum.certificates.viewCert"
+							/></a
 						>
 					</div>
 				</div>
 				<div class="certificate-item">
 					<div class="certificate-badge">
 						<span class="certificate-title"
-							>Curso de Introducción a la Terminal y Línea de
-							Comandos</span
+							><TranslatedText
+								keyStr="curriculum.cert3.title"
+							/></span
 						>
 						<span class="certificate-org">Platzi 2025</span>
 					</div>
 					<div class="certificate-text">
 						<p class="description">
-							Curso que me permitió comprender los fundamentos del
-							sistema Linux, el uso de comandos básicos y
-							avanzados, así como el manejo de utilidades del
-							sistema y la interacción con el sistema operativo
-							desde la terminal.
+							<TranslatedText keyStr="curriculum.cert3.desc" />
 						</p>
 						<div class="separador2"></div>
 						<a
 							class="certificate-link"
 							href="https://platzi.com/p/javier8576/curso/2292-course/diploma/detalle/"
 							target="_blank"
-							rel="noopener">Ver Certificado</a
+							rel="noopener"
+							><TranslatedText
+								keyStr="curriculum.certificates.viewCert"
+							/></a
 						>
 					</div>
 				</div>
 				<div class="certificate-item">
 					<div class="certificate-badge">
 						<span class="certificate-title"
-							>Curso de WordPress Práctico</span
+							><TranslatedText
+								keyStr="curriculum.cert4.title"
+							/></span
 						>
 						<span class="certificate-org">Platzi 2025</span>
 					</div>
 					<div class="certificate-text">
 						<p class="description">
-							Curso que me permitió entender el funcionamiento de
-							WordPress, su instalación y configuración, la
-							gestión de contenido, el uso de temas y la creación
-							de vistas personalizadas.
+							<TranslatedText keyStr="curriculum.cert4.desc" />
 						</p>
 						<div class="separador2"></div>
 						<a
 							class="certificate-link"
 							href="https://platzi.com/p/javier8576/curso/1812-course/diploma/detalle/"
 							target="_blank"
-							rel="noopener">Ver Certificado</a
+							rel="noopener"
+							><TranslatedText
+								keyStr="curriculum.certificates.viewCert"
+							/></a
 						>
 					</div>
 				</div>
 				<div class="certificate-item">
 					<div class="certificate-badge">
 						<span class="certificate-title"
-							>Curso de Introducción al Desarrollo Backend</span
+							><TranslatedText
+								keyStr="curriculum.cert5.title"
+							/></span
 						>
 						<span class="certificate-org">Platzi 2025</span>
 					</div>
 					<div class="certificate-text">
 						<p class="description">
-							Curso que me permitió adquirir conocimientos sobre
-							los fundamentos del desarrollo backend, la creación
-							y consumo de APIs, la gestión de bases de datos y el
-							funcionamiento de los servidores.
+							<TranslatedText keyStr="curriculum.cert5.desc" />
 						</p>
 						<div class="separador2"></div>
 						<a
 							class="certificate-link"
 							href="https://platzi.com/p/javier8576/curso/4656-course/diploma/detalle/"
 							target="_blank"
-							rel="noopener">Ver Certificado</a
+							rel="noopener"
+							><TranslatedText
+								keyStr="curriculum.certificates.viewCert"
+							/></a
 						>
 					</div>
 				</div>
 				<div class="certificate-item">
 					<div class="certificate-badge">
-						<span class="certificate-title">Linux Unhatched</span>
+						<span class="certificate-title"
+							><TranslatedText
+								keyStr="curriculum.cert6.title"
+							/></span
+						>
 						<span class="certificate-org">Cisco 2025</span>
 					</div>
 					<div class="certificate-text">
 						<p class="description">
-							Fundamentos de GNU/Linux, comandos esenciales y
-							navegación del sistema de archivos.
+							<TranslatedText keyStr="curriculum.cert6.desc" />
 						</p>
 						<div class="separador2"></div>
 						<a
 							class="certificate-link"
 							href="https://www.credly.com/badges/61586441-cd24-4499-bae4-99b01e8eb433/linked_in_profile"
 							target="_blank"
-							rel="noopener">Ver Badge</a
+							rel="noopener"
+							><TranslatedText
+								keyStr="curriculum.certificates.viewBadge"
+							/></a
 						>
 					</div>
 				</div>
@@ -407,9 +443,19 @@
 							btn.getAttribute("aria-expanded") === "true";
 						btn.setAttribute("aria-expanded", String(!isOpen));
 
+						// Translations
+						const textOpen =
+							'<span class="lang-es">Ver información</span><span class="lang-en">View info</span>';
+						const textClose =
+							'<span class="lang-es">Ocultar información</span><span class="lang-en">Hide info</span>';
+
 						btn.innerHTML = !isOpen
-							? '<strong>Ocultar información</strong><span aria-hidden="true"></span>'
-							: '<strong>Ver información</strong><span aria-hidden="true"><svg width="20px" height="20px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 10V11L11 16L6 11V10L10 10V4L1 4L1 2L12 2V10H16Z" fill="#ccacff"></path> </g></svg></span>';
+							? "<strong>" +
+								textClose +
+								'</strong><span aria-hidden="true"></span>'
+							: "<strong>" +
+								textOpen +
+								'</strong><span aria-hidden="true"><svg width="20px" height="20px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 10V11L11 16L6 11V10L10 10V4L1 4L1 2L12 2V10H16Z" fill="#ccacff"></path> </g></svg></span>';
 
 						if (isOpen) {
 							// Cerrar
@@ -455,7 +501,8 @@
 				><a
 					href="https://drive.google.com/file/d/1XQmStP_dLOFVak0IEoipUOCMt0Y4syfG/view?usp=sharing"
 					target="_blank"
-					rel="noopener">Descargar currículum</a
+					rel="noopener"
+					><TranslatedText keyStr="curriculum.downloadCv" /></a
 				></button
 			>
 			<div class="separador3"></div>

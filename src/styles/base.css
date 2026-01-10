@@ -75,3 +75,19 @@ body::before {
         );
     margin: 12px 0;
 }
+
+/* Language Toggle Logic */
+/* Default: Spanish visible, English hidden */
+:root:not(.lang-en) .lang-en {
+    display: none !important;
+}
+
+/* English Active: Spanish hidden, English visible */
+:root.lang-en .lang-es {
+    display: none !important;
+}
+
+:root.lang-en .lang-en {
+    display: unset !important;
+    /* Or block/inline depending on element, but unset allows it to take its natural state if defined, or inherit */
+}
