@@ -105,6 +105,12 @@ export const translations = {
                 es: "Fundamentos de GNU/Linux, comandos esenciales y navegación del sistema de archivos.",
                 en: "Fundamentals of GNU/Linux, essential commands and file system navigation."
             }
+        },
+        cv: {
+            downloadCv: {
+                es: "https://drive.google.com/file/d/1WLBilK6Z6MeBhHeFN45Qh55jKZ_Tv5e7/view?usp=drive_link",
+                en: "https://drive.google.com/file/d/1seWENNWkq1H-UoxEAgn6nfJi8ggyU4PF/view?usp=drive_link"
+            }
         }
     },
     about: {
@@ -167,6 +173,14 @@ export const translations = {
             excerpt: {
                 es: "¡Hola a todos! He de anunciar que he publicado mi portafolio web personal. Después de días de trabajo, finalmente está en línea. En este blog compartiré algunos detalles sobre el proceso de creación y lo que pueden esperar encontrar en mi portafolio.",
                 en: "Hello everyone! I have to announce that I have published my personal web portfolio. After days of work, it is finally online. In this blog I will share some details about the creation process and what you can expect to find in my portfolio."
+            }
+        },
+        post5: {
+            title: { es: "Actualización del portafolio", en: "Portfolio update" },
+            date: { es: "10 de enero, 2026", en: "January 10, 2026" },
+            excerpt: {
+                es: "¡Hola a todos! hoy he actualizado mi portafolio con una version en inglés. Pueden cambar el idioma con el selector en la barra de navegación.",
+                en: "Hello everyone! I have updated my portfolio with an English version. You can change the language with the selector in the navigation bar."
             }
         }
     },

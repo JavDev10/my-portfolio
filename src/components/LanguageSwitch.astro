@@ -65,8 +65,9 @@
     .switch {
         position: relative;
         display: inline-block;
-        width: 70px;
+        width: 80px;
         height: 34px;
+        padding: 5px;
     }
 
     .switch input {
@@ -99,7 +100,7 @@
         content: "";
         height: 26px;
         width: 26px;
-        left: 4px;
+        left: 7px;
         bottom: 2px;
         background-color: #bb90ff;
         transition: 0.4s;
@@ -145,13 +146,11 @@
         */
         position: absolute;
         right: 10px;
-        opacity: 1; /* Visible when unchecked (ES mode) ??? No wait. */
     }
 
     .text-en {
         position: absolute;
         left: 10px;
-        opacity: 0.5;
     }
 
     /* Logic for text visibility */
@@ -162,12 +161,10 @@
     .text-es {
         right: 8px;
         left: auto;
-        opacity: 0.4;
     }
     .text-en {
         left: 8px;
         right: auto;
-        opacity: 0.4;
     }
 
     /* When unchecked (ES), circle is left. The text covered by circle should be hidden? Or the text NOT covered is dimmed? */
@@ -176,11 +173,9 @@
     /* Better styles: */
     /* ES is default (unchecked). Slider circle is LEFT. */
     input:not(:checked) + .slider .text-es {
-        opacity: 1;
         color: #1e1e24; /* Text color inside circle if circle covers it? No circle is solid. */
         /* Let's make text NEXT to circle. */
         right: 8px;
-        opacity: 0.5;
     }
     input:not(:checked) + .slider .text-en {
         /* This is confusing. Let's restart slider inner text logic. */

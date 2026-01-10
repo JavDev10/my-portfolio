@@ -11,7 +11,7 @@
     align-items: center;
     gap: 10px;
     border-radius: 15px;
-    background: linear-gradient(135deg, #271746 0%, #1a0d2e 100%);
+    background: rgba(20, 10, 40, 0.6);
     padding: 2rem 1.5rem;
     font-weight: 400;
     text-wrap: pretty;
