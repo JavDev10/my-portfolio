@@ -208,7 +208,7 @@ export const translations = {
         proj2: {
             title: { es: "EduAdapta - 2026", en: "EduAdapta - 2026" },
             desc1: {
-                es: "Continuacion de mi proyecto de titulo. Plataforma web educativa desarrollada para diferentes instituciones o usuarios que trabajen en la educación diferencial en Chile. Actualmente esta en progreso de desarrollo mejorando e implementando funcionalidades, por ejemplo: IA para el análisis de resultados.",
+                es: "Continuacion de mi proyecto de titulo. Plataforma web educativa desarrollada para diferentes instituciones o usuarios que trabajen en la educación diferencial en Chile. Actualmente esta en proceso de desarrollo mejorando e implementando funcionalidades, por ejemplo: IA para el análisis de resultados.",
                 en: "Continuation of my title project. Educational web platform developed for different institutions or users who work in special education in Chile. It is currently under development, improving and implementing functionalities, for example: AI for results analysis."
             },
 
