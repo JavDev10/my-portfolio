@@ -366,9 +366,23 @@
     padding: 25px;
 }
 
+.experience-card-actual {
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
+    border: 1px solid #bafdff;
+    border-radius: 15px;
+    padding: 25px 40px;
+}
+
 .experience-card h4 {
     color: #85eff3;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.experience-card-actual h4 {
+    color: #85eff3;
+    font-size: 1.4rem;
     margin-bottom: 10px;
     font-weight: bold;
 }

@@ -19,7 +19,7 @@ export const translations = {
     },
     curriculum: {
         name: { es: "Javier Camaño Torres", en: "Javier Camaño Torres" },
-        title: { es: "Ingeniero en Informática | Programador", en: "Computer Engineer | Programmer" },
+        title: { es: "Ingeniero en Informática | Desarrollador Web", en: "Computer Engineer | Web Developer" },
         experience: { es: "Experiencia", en: "Experience" },
         education: { es: "Estudios y formación", en: "Education and Training" },
         certificates: {
@@ -33,10 +33,10 @@ export const translations = {
 
         exp1: {
             role: { es: "Analista Programador Junior", en: "Junior Programmer Analyst" },
-            date: { es: "ADIPA | Marzo - Actualidad | 2025", en: "ADIPA | March - Present | 2025" },
+            date: { es: "ADIPA | 1 año 1 mes | 2025 - 2026", en: "ADIPA | 1 year 1 month | 2025 - 2026" },
             desc: {
-                es: "Actualmente colaboro en el mantenimiento de infraestructura backend, implementando soluciones para mejorar la eficiencia y escalabilidad. También trabajo en la integración de APIs y automatización de procesos.",
-                en: "Currently collaborating on backend infrastructure maintenance, implementing solutions to improve efficiency and scalability. Also working on API integration and process automation."
+                es: "Colaboré en el mantenimiento de infraestructura backend, implementando soluciones para mejorar la eficiencia y escalabilidad. También trabajé en la integración de APIs y automatización de procesos.",
+                en: "Collaborated on backend infrastructure maintenance, implementing solutions to improve efficiency and scalability. Also worked on API integration and process automation."
             }
         },
         exp2: {
@@ -45,6 +45,14 @@ export const translations = {
             desc: {
                 es: "Durante mi práctica profesional, me enfoqué en el desarrollo de componentes y programación con Laravel y gestión de contenido en Wordpress, tambien utilicé tecnologías como Docker, Linux y máquinas virtuales.",
                 en: "During my professional internship, I focused on component development and programming with Laravel and content management in Wordpress, also using technologies like Docker, Linux and virtual machines."
+            }
+        },
+        exp3: {
+            role: { es: "X", en: "X" },
+            date: { es: "X", en: "X" },
+            desc: {
+                es: "X",
+                en: "X"
             }
         },
         edu1: {
@@ -64,6 +72,13 @@ export const translations = {
             alt: { es: "Ilustración representando el estudio autodidacta y aprendizaje continuo", en: "Illustration representing self-taught study and continuous learning" }
         },
         cert1: {
+            title: { es: "Git y Github", en: "Git and Github" },
+            desc: {
+                es: "Curso que me permitió adquirir conocimientos fundamentales sobre el funcionamiento de Git y Github.",
+                en: "Course that allowed me to acquire fundamental knowledge about the operation of Git and Github."
+            }
+        },
+        cert2: {
             title: { es: "Curso de N8N", en: "N8N Course" },
 
             desc: {
@@ -71,13 +86,7 @@ export const translations = {
                 en: "Course that allowed me to acquire fundamental knowledge in process automation with n8n, integrations and best practices."
             }
         },
-        cert2: {
-            title: { es: "Curso de Prompt Engineering", en: "Prompt Engineering Course" },
-            desc: {
-                es: "Curso que me permitió adquirir conocimientos fundamentales sobre el funcionamiento de los modelos de lenguaje (LLM), técnicas efectivas de prompt y configuraciones avanzadas para optimizar resultados.",
-                en: "Course that allowed me to acquire fundamental knowledge about the operation of language models (LLM), effective prompt techniques and advanced configurations to optimize results."
-            }
-        },
+
         cert3: {
             title: { es: "Curso de Introducción a la Terminal y Línea de Comandos", en: "Introduction to Terminal and Command Line Course" },
             desc: {
@@ -194,6 +203,15 @@ export const translations = {
             },
             videoText: { es: "Video demostrativo", en: "Demo video" },
             here: { es: "aquí", en: "here" },
+            alt: { es: "Captura de pantalla de la aplicación educativa para el Instituto Down", en: "Screenshot of the educational application for the Down Institute" }
+        },
+        proj2: {
+            title: { es: "EduAdapta - 2026", en: "EduAdapta - 2026" },
+            desc1: {
+                es: "Continuacion de mi proyecto de titulo. Plataforma web educativa desarrollada para diferentes instituciones o usuarios que trabajen en la educación diferencial en Chile. Actualmente esta en progreso de desarrollo mejorando e implementando funcionalidades, por ejemplo: IA para el análisis de resultados.",
+                en: "Continuation of my title project. Educational web platform developed for different institutions or users who work in special education in Chile. It is currently under development, improving and implementing functionalities, for example: AI for results analysis."
+            },
+
             alt: { es: "Captura de pantalla de la aplicación educativa para el Instituto Down", en: "Screenshot of the educational application for the Down Institute" }
         }
     }

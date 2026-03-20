@@ -1,9 +1,24 @@
 ---
 // ProjectsContent Component
 import { Image } from "astro:assets";
-import projectImage from "../../public/img/proyects/proyect-institute-down.webp";
 import TranslatedText from "./TranslatedText.astro";
 import { translations } from "../i18n/translations";
+
+const proj1Matches = import.meta.glob(
+  "../../public/img/proyects/proj1/*.{jpeg,jpg,png,gif,webp}",
+  { eager: true },
+);
+const proj1Images = Object.values(proj1Matches).map(
+  (module: any) => module.default,
+);
+
+const proj2Matches = import.meta.glob(
+  "../../public/img/proyects/proj2/*.{jpeg,jpg,png,gif,webp}",
+  { eager: true },
+);
+const proj2Images = Object.values(proj2Matches).map(
+  (module: any) => module.default,
+);
 ---
 
 <div class="content-section" id="projects-content">
@@ -13,6 +28,74 @@ import { translations } from "../i18n/translations";
   </div>
 
   <div class="projects-grid">
+    <div class="project-card2">
+      <div class="project-title">
+        <TranslatedText keyStr="projects.proj2.title" />
+      </div>
+      <div class="project-info-row">
+        <div class="project-description-box">
+          <p class="description">
+            <TranslatedText keyStr="projects.proj2.desc1" />
+          </p>
+        </div>
+        <div class="project-image-box">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              {
+                proj2Images.map((img, index) => (
+                  <div class={`carousel-slide ${index === 0 ? "active" : ""}`}>
+                    <Image
+                      class="carousel-img"
+                      src={img}
+                      alt={`${translations.projects.proj2.title.es} - Imagen ${index + 1}`}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      width={600}
+                      height={260}
+                      format="webp"
+                    />
+                  </div>
+                ))
+              }
+            </div>
+            {
+              proj2Images.length > 1 && (
+                <>
+                  <button
+                    class="carousel-btn prev"
+                    aria-label="Imagen anterior"
+                  >
+                    &#10094;
+                  </button>
+                  <button
+                    class="carousel-btn next"
+                    aria-label="Siguiente imagen"
+                  >
+                    &#10095;
+                  </button>
+                  <div class="carousel-indicators">
+                    {proj2Images.map((_, index) => (
+                      <button
+                        class={`carousel-dot ${index === 0 ? "active" : ""}`}
+                        aria-label={`Ir a imagen ${index + 1}`}
+                        data-index={index}
+                      />
+                    ))}
+                  </div>
+                </>
+              )
+            }
+          </div>
+        </div>
+      </div>
+      <div class="project-tech-row">
+        <span class="tech-tag2">React</span>
+        <span class="tech-tag2">Javascript</span>
+        <span class="tech-tag2">Firebase</span>
+        <span class="tech-tag2">Git</span>
+        <span class="tech-tag2">Vite</span>
+        <span class="tech-tag2">IA</span>
+      </div>
+    </div>
     <div class="project-card2">
       <div class="project-title">
         <TranslatedText keyStr="projects.proj1.title" />
@@ -33,24 +116,52 @@ import { translations } from "../i18n/translations";
           </p>
         </div>
         <div class="project-image-box">
-          <Image
-            class="lang-es"
-            src={projectImage}
-            alt={translations.projects.proj1.alt.es}
-            loading="lazy"
-            width={600}
-            height={260}
-            format="webp"
-          />
-          <Image
-            class="lang-en"
-            src={projectImage}
-            alt={translations.projects.proj1.alt.en}
-            loading="lazy"
-            width={600}
-            height={260}
-            format="webp"
-          />
+          <div class="carousel-container">
+            <div class="carousel-track">
+              {
+                proj1Images.map((img, index) => (
+                  <div class={`carousel-slide ${index === 0 ? "active" : ""}`}>
+                    <Image
+                      class="carousel-img"
+                      src={img}
+                      alt={`${translations.projects.proj1.title.es} - Imagen ${index + 1}`}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      width={600}
+                      height={260}
+                      format="webp"
+                    />
+                  </div>
+                ))
+              }
+            </div>
+            {
+              proj1Images.length > 1 && (
+                <>
+                  <button
+                    class="carousel-btn prev"
+                    aria-label="Imagen anterior"
+                  >
+                    &#10094;
+                  </button>
+                  <button
+                    class="carousel-btn next"
+                    aria-label="Siguiente imagen"
+                  >
+                    &#10095;
+                  </button>
+                  <div class="carousel-indicators">
+                    {proj1Images.map((_, index) => (
+                      <button
+                        class={`carousel-dot ${index === 0 ? "active" : ""}`}
+                        aria-label={`Ir a imagen ${index + 1}`}
+                        data-index={index}
+                      />
+                    ))}
+                  </div>
+                </>
+              )
+            }
+          </div>
         </div>
       </div>
       <div class="project-tech-row">
@@ -63,3 +174,144 @@ import { translations } from "../i18n/translations";
     </div>
   </div>
 </div>
+
+<!-- Image Modal Lightbox -->
+<div id="image-modal" class="modal-backdrop">
+  <div class="modal-content">
+    <button id="modal-close" class="modal-close-btn" aria-label="Cerrar"
+      >&times;</button
+    >
+    <img id="modal-image" src="" alt="Vista ampliada" />
+  </div>
+</div>
+
+<script>
+  const initCarousels = () => {
+    const carousels = document.querySelectorAll(".carousel-container");
+
+    carousels.forEach((carousel) => {
+      // Prevent double init across Astro View Transitions
+      if (carousel.hasAttribute("data-carousel-init")) return;
+      carousel.setAttribute("data-carousel-init", "true");
+
+      const track = carousel.querySelector(".carousel-track") as HTMLElement;
+      const slides = carousel.querySelectorAll(".carousel-slide");
+      const dots = carousel.querySelectorAll(".carousel-dot");
+      const prevBtn = carousel.querySelector(".carousel-btn.prev");
+      const nextBtn = carousel.querySelector(".carousel-btn.next");
+
+      if (!track || slides.length <= 1) return;
+
+      let currentIndex = 0;
+      let slideInterval: number | undefined;
+
+      const updateCarousel = (index: number) => {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+
+        currentIndex = index;
+
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        slides.forEach((s) => s.classList.remove("active"));
+        slides[currentIndex].classList.add("active");
+
+        dots.forEach((d) => d.classList.remove("active"));
+        if (dots[currentIndex]) {
+          dots[currentIndex].classList.add("active");
+        }
+      };
+
+      const startSlide = () => {
+        // ALWAYS clear previous before creating interval
+        clearInterval(slideInterval);
+        slideInterval = window.setInterval(() => {
+          updateCarousel(currentIndex + 1);
+        }, 4500);
+      };
+
+      const resetSlide = () => {
+        startSlide();
+      };
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          updateCarousel(currentIndex - 1);
+          resetSlide();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          updateCarousel(currentIndex + 1);
+          resetSlide();
+        });
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          updateCarousel(index);
+          resetSlide();
+        });
+      });
+
+      carousel.addEventListener("mouseenter", () =>
+        clearInterval(slideInterval),
+      );
+      carousel.addEventListener("mouseleave", startSlide);
+
+      startSlide();
+    });
+  };
+
+  // Modal Logic
+  const initModal = () => {
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-image") as HTMLImageElement;
+    const closeBtn = document.getElementById("modal-close");
+
+    if (!modal || !modalImg || modal.hasAttribute("data-modal-init")) return;
+    modal.setAttribute("data-modal-init", "true");
+
+    // Mover el modal directamente al <body> para escapar de contextos de aislamiento de CSS (ej. transforms)
+    if (modal.parentElement !== document.body) {
+      document.body.appendChild(modal);
+    }
+
+    const openModal = (src: string) => {
+      modalImg.src = src;
+      modal.classList.add("show");
+      document.body.style.overflow = "hidden";
+    };
+
+    const closeModal = () => {
+      modal.classList.remove("show");
+      document.body.style.overflow = "";
+      setTimeout(() => {
+        modalImg.src = "";
+      }, 300);
+    };
+
+    document.querySelectorAll(".carousel-img").forEach((img) => {
+      img.addEventListener("click", (e) => {
+        const target = e.target as HTMLImageElement;
+        openModal(target.src);
+      });
+    });
+
+    closeBtn?.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
+    });
+  };
+
+  // Run on initial load and view transitions
+  document.addEventListener("DOMContentLoaded", initCarousels);
+  document.addEventListener("astro:page-load", initCarousels);
+  document.addEventListener("DOMContentLoaded", initModal);
+  document.addEventListener("astro:page-load", initModal);
+</script>
