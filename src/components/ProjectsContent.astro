@@ -19,6 +19,14 @@ const proj2Matches = import.meta.glob(
 const proj2Images = Object.values(proj2Matches).map(
   (module: any) => module.default,
 );
+
+const proj3Matches = import.meta.glob(
+  "../../public/img/proyects/proj3/*.{jpeg,jpg,png,gif,webp}",
+  { eager: true },
+);
+const proj3Images = Object.values(proj3Matches).map(
+  (module: any) => module.default,
+);
 ---
 
 <div class="content-section" id="projects-content">
@@ -28,6 +36,72 @@ const proj2Images = Object.values(proj2Matches).map(
   </div>
 
   <div class="projects-grid">
+    <!--div class="project-card2">
+      <div class="project-title">
+        <TranslatedText keyStr="projects.proj3.title" />
+      </div>
+      <div class="project-info-row">
+        <div class="project-description-box">
+          <p class="description">
+            <TranslatedText keyStr="projects.proj3.desc1" />
+          </p>
+        </div>
+        <div class="project-image-box">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              {
+                proj3Images.map((img, index) => (
+                  <div class={`carousel-slide ${index === 0 ? "active" : ""}`}>
+                    <Image
+                      class="carousel-img"
+                      src={img}
+                      alt={`${translations.projects.proj3.title.es} - Imagen ${index + 1}`}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      width={600}
+                      height={260}
+                      format="webp"
+                    />
+                  </div>
+                ))
+              }
+            </div>
+            {
+              proj3Images.length > 1 && (
+                <>
+                  <button
+                    class="carousel-btn prev"
+                    aria-label="Imagen anterior"
+                  >
+                    &#10094;
+                  </button>
+                  <button
+                    class="carousel-btn next"
+                    aria-label="Siguiente imagen"
+                  >
+                    &#10095;
+                  </button>
+                  <div class="carousel-indicators">
+                    {proj3Images.map((_, index) => (
+                      <button
+                        class={`carousel-dot ${index === 0 ? "active" : ""}`}
+                        aria-label={`Ir a imagen ${index + 1}`}
+                        data-index={index}
+                      />
+                    ))}
+                  </div>
+                </>
+              )
+            }
+          </div>
+        </div>
+      </div>
+      <div class="project-tech-row">
+        <span class="tech-tag2">Astro</span>
+        <span class="tech-tag2">Javascript</span>
+        <span class="tech-tag2">Tailwind</span>
+        <span class="tech-tag2">Git</span>
+      </div>
+    </div-->
     <div class="project-card2">
       <div class="project-title">
         <TranslatedText keyStr="projects.proj2.title" />

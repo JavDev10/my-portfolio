@@ -40,7 +40,7 @@ export const translations = {
             }
         },
         exp2: {
-            role: { es: "Practica Profesional (Analista TI)", en: "Professional Internship (IT Analyst)" },
+            role: { es: "Analista TI", en: "IT Analyst" },
             date: { es: "ADIPA | 3 meses | 2024", en: "ADIPA | 3 months | 2024" },
             desc: {
                 es: "Durante mi práctica profesional, me enfoqué en el desarrollo de componentes y programación con Laravel y gestión de contenido en Wordpress, tambien utilicé tecnologías como Docker, Linux y máquinas virtuales.",
@@ -207,6 +207,15 @@ export const translations = {
         },
         proj2: {
             title: { es: "EduAdapta - 2026", en: "EduAdapta - 2026" },
+            desc1: {
+                es: "Continuacion de mi proyecto de titulo. Plataforma web educativa desarrollada para diferentes instituciones o usuarios que trabajen en la educación diferencial en Chile. Actualmente esta en proceso de desarrollo mejorando e implementando funcionalidades, por ejemplo: IA para el análisis de resultados.",
+                en: "Continuation of my title project. Educational web platform developed for different institutions or users who work in special education in Chile. It is currently under development, improving and implementing functionalities, for example: AI for results analysis."
+            },
+
+            alt: { es: "Captura de pantalla de la aplicación educativa para el Instituto Down", en: "Screenshot of the educational application for the Down Institute" }
+        },
+        proj3: {
+            title: { es: "Enerxia Ingenería WEB - 2026", en: "Enerxia Ingenería WEB - 2026" },
             desc1: {
                 es: "Continuacion de mi proyecto de titulo. Plataforma web educativa desarrollada para diferentes instituciones o usuarios que trabajen en la educación diferencial en Chile. Actualmente esta en proceso de desarrollo mejorando e implementando funcionalidades, por ejemplo: IA para el análisis de resultados.",
                 en: "Continuation of my title project. Educational web platform developed for different institutions or users who work in special education in Chile. It is currently under development, improving and implementing functionalities, for example: AI for results analysis."
