@@ -23,10 +23,10 @@
             if (!canvas) return;
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 2;
-            this.speedX = Math.random() * 0.5 - 0.25;
-            this.speedY = Math.random() * 0.5 - 0.25;
-            this.color = `rgba(	179, 148, 249, ${Math.random() * 0.8})`;
+            this.size = Math.random() * 3;
+            this.speedX = Math.random() * 0.2 - 0.25;
+            this.speedY = Math.random() * 0.2 - 0.25;
+            this.color = `rgba(	227, 212, 255, ${Math.random() * 0.8})`;
         }
 
         update() {
@@ -155,6 +155,6 @@
         height: 100%;
         z-index: 0;
         pointer-events: none;
-        background-color: #0e021b;
+        background-color: #0b0114;
     }
 </style>
