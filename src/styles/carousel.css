@@ -24,7 +24,7 @@
 }
 
 .skill-card {
-  background: rgba(20, 10, 40, 0.6);
+  background: rgba(32, 10, 40, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(133, 239, 243, 0.2);

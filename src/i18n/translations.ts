@@ -196,7 +196,7 @@ export const translations = {
     projects: {
         title: { es: "Proyectos", en: "Projects" },
         proj1: {
-            title: { es: "Aplicación educativa Instituto Down - 2024", en: "Down Institute educational application - 2024" },
+            title: { es: "Aplicación educativa Instituto Down (2024)", en: "Down Institute educational application (2024)" },
             desc1: {
                 es: "Proyecto de título 2024. Aplicación web educativa desarrollada para el Instituto Down de Concepción, enfocada a los alumnos con síndrome de Down y ser una herramienta de apoyo en las clases para los docentes.",
                 en: "Title project 2024. Educational web application developed for the Down Institute of Concepción, focused on students with Down syndrome and to be a support tool in classes for teachers."
@@ -206,7 +206,7 @@ export const translations = {
             alt: { es: "Captura de pantalla de la aplicación educativa para el Instituto Down", en: "Screenshot of the educational application for the Down Institute" }
         },
         proj2: {
-            title: { es: "EduAdapta - 2026", en: "EduAdapta - 2026" },
+            title: { es: "EduAdapta (2026)", en: "EduAdapta (2026)" },
             desc1: {
                 es: "Continuacion de mi proyecto de titulo. Plataforma web educativa desarrollada para diferentes instituciones o usuarios que trabajen en la educación diferencial en Chile. Actualmente esta en proceso de desarrollo mejorando e implementando funcionalidades, por ejemplo: IA para el análisis de resultados.",
                 en: "Continuation of my title project. Educational web platform developed for different institutions or users who work in special education in Chile. It is currently under development, improving and implementing functionalities, for example: AI for results analysis."
@@ -215,10 +215,10 @@ export const translations = {
             alt: { es: "Captura de pantalla de la aplicación educativa para el Instituto Down", en: "Screenshot of the educational application for the Down Institute" }
         },
         proj3: {
-            title: { es: "Enerxia Ingenería WEB - 2026", en: "Enerxia Ingenería WEB - 2026" },
+            title: { es: "DoroDoro - Temporizador Pomodoro (2026)", en: "DoroDoro - Pomodoro Timer (2026)" },
             desc1: {
-                es: "Continuacion de mi proyecto de titulo. Plataforma web educativa desarrollada para diferentes instituciones o usuarios que trabajen en la educación diferencial en Chile. Actualmente esta en proceso de desarrollo mejorando e implementando funcionalidades, por ejemplo: IA para el análisis de resultados.",
-                en: "Continuation of my title project. Educational web platform developed for different institutions or users who work in special education in Chile. It is currently under development, improving and implementing functionalities, for example: AI for results analysis."
+                es: "Temporizador Pomodoro compacto para Windows. Se sitúa en tu escritorio sin estorbar, sin desorden en la barra de tareas, sin interfaz de usuario distractora, solo tu sesión de enfoque, al frente y al centro.",
+                en: "Compact Pomodoro timer widget for Windows. It sits on your desktop without getting in the way no taskbar clutter, no distracting UI  just your focus session, front and center."
             },
 
             alt: { es: "Captura de pantalla de la aplicación educativa para el Instituto Down", en: "Screenshot of the educational application for the Down Institute" }

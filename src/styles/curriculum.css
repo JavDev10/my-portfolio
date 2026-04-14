@@ -40,7 +40,7 @@
     font-family: 'Fira Mono', monospace;
     font-size: 2rem;
     font-weight: 700;
-    color: rgba(139, 92, 246, 0.08);
+    color: #8b5cf614;
     line-height: 1;
     pointer-events: none;
     user-select: none;
@@ -66,7 +66,7 @@
     color: #eee4ff;
     font-size: 0.85rem;
     font-family: 'Fira Mono', monospace;
-    background: rgba(139, 92, 246, 0.15);
+    background: #8b5cf626;
     border: 1px solid rgba(139, 92, 246, 0.4);
     border-radius: 6px;
     padding: 3px 10px;
