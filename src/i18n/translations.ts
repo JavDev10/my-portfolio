@@ -33,7 +33,7 @@ export const translations = {
 
         exp1: {
             role: { es: "Analista Programador Junior", en: "Junior Programmer Analyst" },
-            date: { es: "ADIPA | 1 año 1 mes | 2025 - 2026", en: "ADIPA | 1 year 1 month | 2025 - 2026" },
+            date: { es: "ADIPA | 1 año | Marzo 2025 - Marzo 2026", en: "ADIPA | 1 year | 2025 - 2026" },
             desc: {
                 es: "Colaboré en el mantenimiento de infraestructura backend, implementando soluciones para mejorar la eficiencia y escalabilidad. También trabajé en la integración de APIs y automatización de procesos.",
                 en: "Collaborated on backend infrastructure maintenance, implementing solutions to improve efficiency and scalability. Also worked on API integration and process automation."
@@ -48,11 +48,11 @@ export const translations = {
             }
         },
         exp3: {
-            role: { es: "X", en: "X" },
-            date: { es: "X", en: "X" },
+            role: { es: "Desarrollador Web & Automatizador", en: "Web Developer & Automation Specialist" },
+            date: { es: "FocusTeam | Actualidad | 2026", en: "FocusTeam | Present | 2026" },
             desc: {
-                es: "X",
-                en: "X"
+                es: "Me desempeño en la creación de sitios web a peticiones de clientes, como también en la automatización de procesos para empresas, utilizando herramientas como wordpress, elementor, woocomerce, n8n entre otras tecnologías.",
+                en: "I work on creating websites at the request of clients, as well as automating processes for companies, using tools like wordpress, elementor, woocomerce, n8n among other technologies."
             }
         },
         edu1: {
@@ -137,7 +137,7 @@ export const translations = {
         skills: {
             fluency: { es: "Aprendizaje fluido", en: "Fluid learning" },
             teamwork: { es: "Trabajo en equipo", en: "Teamwork" },
-            english: { es: "Inglés nivel B2", en: "English level B2" },
+            english: { es: "Inglés nivel B1", en: "English level B1" },
             problemSolving: { es: "Resolución de problemas", en: "Problem solving" },
             webDev: { es: "Programación Web", en: "Web Programming" },
             excel: { es: "Excel", en: "Excel" },
